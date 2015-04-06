@@ -2,7 +2,7 @@
 Compares bird sitings in different regions
 
 ## Team Name
-TODO
+The Sky Team
 
 ## Members
 - Tahani Almanie
