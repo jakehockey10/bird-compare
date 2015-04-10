@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+/*
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -54,7 +55,14 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
-});
+});*/
 
+var server = app.listen(3000, function() {
+
+    var host = server.address().address
+    var port = server.address().port
+
+    console.log('App listening at http://%s:%s', host, port)
+})
 
 module.exports = app;

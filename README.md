@@ -34,4 +34,9 @@ Using the [eBird API](https://confluence.cornell.edu/display/CLOISAPI/eBird+API+
 4. Build UI interface that allows user to manipulate comparison criteria according to parameters available in various APIs.
 
 ## Responsibilities
-Milestones will be broken up into tasks and divvied up across the team.  However, we look forward to supporting each other in our tasks to help move the project forward.  The team will consider the need to task out each milestone in detail enough to warrent the use of a kanban board or similar tool to help the team tackle tasks in an efficient manner.
+Milestones will be broken up into tasks and divided up across the team.  However, we look forward to supporting each other in our tasks to help move the project forward.  The team will consider the need to task out each milestone in detail enough to warrent the use of a kanban board or similar tool to help the team tackle tasks in an efficient manner.
+
+## To run the code:
+npm istall
+node app.js
+
