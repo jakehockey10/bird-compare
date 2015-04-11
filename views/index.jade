@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title= title
+    title US eBird-compare
     link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css')
     link(rel="stylesheet" href="/css/style.css")
   body
@@ -19,15 +19,17 @@ html
     div(align='center')
         b Species Name:
         input(type="text", name="species")
-        input(type='submit',value='Enter')
+        input(type='submit',value='Select')
         br
         br
     div(align='center')
         table
             tr 
                 td
-                    b Region 1:
-                    input(type="text", name="r1")
+                    b Region 1 
+                    select
+                        each state, i in states
+                            option(value=i) #{state.name}
                     input(type='submit',value='Choose')
                     br
                     br
@@ -35,8 +37,10 @@ html
                     script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
                     script(src='/js/map1.js')
                 td
-                    b Region 2:
-                    input(type="text", name="r2")
+                    b Region 2 
+                    select
+                        each state, i in states
+                            option(value=i) #{state.name}
                     input(type='submit',value='Choose')
                     br
                     br
