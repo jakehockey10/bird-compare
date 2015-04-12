@@ -1,0 +1,20 @@
+//
+   Created by jake on 4/8/15.
+
+.container
+   each item in items
+      .media
+         .media-left
+            a(href='#')
+               img.media-object(src='...', alt='...')
+         .media-body
+            h4.media-heading
+               span.badge= item.howMany
+               | #{' ' + item.comName + ' '}
+               small= item.sciName
+            dl.dl-horizontal
+                dt Where
+                dd= item.locName
+                dt When
+                dd= new Date(item.obsDt).toLocaleString()
+            // pre= JSON.stringify(item, null, 2)
