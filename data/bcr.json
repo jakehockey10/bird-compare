@@ -1,0 +1,266 @@
+[
+  {
+    "primary_name":"Aleutian/Bering Sea Islands",
+    "region_code":1
+  },
+  {
+    "primary_name":"Western Alaska",
+    "region_code":2
+  },
+  {
+    "primary_name":"Arctic Plains and Mountains",
+    "region_code":3
+  },
+  {
+    "primary_name":"Northwestern Interior Forest",
+    "region_code":4
+  },
+  {
+    "primary_name":"Northern Pacific Rainforest",
+    "region_code":5
+  },
+  {
+    "primary_name":"Boreal Taiga Plains",
+    "region_code":6
+  },
+  {
+    "primary_name":"Taiga Shield and Hudson Plains",
+    "region_code":7
+  },
+  {
+    "primary_name":"Boreal Softwood Shield",
+    "region_code":8
+  },
+  {
+    "primary_name":"Great Basin",
+    "region_code":9
+  },
+  {
+    "primary_name":"Northern Rockies",
+    "region_code":10
+  },
+  {
+    "primary_name":"Prairie Potholes",
+    "region_code":11
+  },
+  {
+    "primary_name":"Boreal Hardwood Transition",
+    "region_code":12
+  },
+  {
+    "primary_name":"Lower Great Lakes/St. Lawrence Plain",
+    "region_code":13
+  },
+  {
+    "primary_name":"Atlantic Northern Forest",
+    "region_code":14
+  },
+  {
+    "primary_name":"Sierra Nevada",
+    "region_code":15
+  },
+  {
+    "primary_name":"Southern Rockies/Colorado Plateau",
+    "region_code":16
+  },
+  {
+    "primary_name":"Badlands and Prairies",
+    "region_code":17
+  },
+  {
+    "primary_name":"Shortgrass Prairie",
+    "region_code":18
+  },
+  {
+    "primary_name":"Central Mixed Grass Prairie",
+    "region_code":19
+  },
+  {
+    "primary_name":"Edwards Plateau",
+    "region_code":20
+  },
+  {
+    "primary_name":"Oaks and Prairies",
+    "region_code":21
+  },
+  {
+    "primary_name":"Eastern Tallgrass Prairie",
+    "region_code":22
+  },
+  {
+    "primary_name":"Prairie Hardwood Transition",
+    "region_code":23
+  },
+  {
+    "primary_name":"Central Hardwoods",
+    "region_code":24
+  },
+  {
+    "primary_name":"West Gulf Coastal Plain/Ouachitas",
+    "region_code":25
+  },
+  {
+    "primary_name":"Mississippi Alluvial Valley",
+    "region_code":26
+  },
+  {
+    "primary_name":"Southeastern Coastal Plain",
+    "region_code":27
+  },
+  {
+    "primary_name":"Appalachian Mountains",
+    "region_code":28
+  },
+  {
+    "primary_name":"Piedmont",
+    "region_code":29
+  },
+  {
+    "primary_name":"New England/Mid-atlantic Coast",
+    "region_code":30
+  },
+  {
+    "primary_name":"Peninsular Florida",
+    "region_code":31
+  },
+  {
+    "primary_name":"Coastal California",
+    "region_code":32
+  },
+  {
+    "primary_name":"Sonoran and Mohave Deserts",
+    "region_code":33
+  },
+  {
+    "primary_name":"Sierra Madre Occidental",
+    "region_code":34
+  },
+  {
+    "primary_name":"Chihuahuan Desert",
+    "region_code":35
+  },
+  {
+    "primary_name":"Tamaulipan Brushlands",
+    "region_code":36
+  },
+  {
+    "primary_name":"Gulf Coastal Prairie",
+    "region_code":37
+  },
+  {
+    "primary_name":"Islas Marias",
+    "region_code":38
+  },
+  {
+    "primary_name":"Sierras de Baja California",
+    "region_code":39
+  },
+  {
+    "primary_name":"Desierto de Baja California",
+    "region_code":40
+  },
+  {
+    "primary_name":"Islas del Golfo de California",
+    "region_code":41
+  },
+  {
+    "primary_name":"Sierras y Planicies del Cabo",
+    "region_code":42
+  },
+  {
+    "primary_name":"Planicie Costera. Lomerios y Canones de Occidente",
+    "region_code":43
+  },
+  {
+    "primary_name":"Marismas Nacionales",
+    "region_code":44
+  },
+  {
+    "primary_name":"Planicie Costera y Lomerios del Pacifico Sur",
+    "region_code":45
+  },
+  {
+    "primary_name":"Sur del Altiplano Mexicano",
+    "region_code":46
+  },
+  {
+    "primary_name":"Eje Neovolcanico Transversal",
+    "region_code":47
+  },
+  {
+    "primary_name":"Sierra Madre Oriental",
+    "region_code":48
+  },
+  {
+    "primary_name":"Planicie Costera y Lomerios Secos del Golfo de Mexico",
+    "region_code":49
+  },
+  {
+    "primary_name":"Cuenca del Rio Balsas`",
+    "region_code":50
+  },
+  {
+    "primary_name":"Valle Tehuacan-Cuicatlan",
+    "region_code":51
+  },
+  {
+    "primary_name":"Planice Costera y Lomerios Humedos del Golfo de Mexico",
+    "region_code":52
+  },
+  {
+    "primary_name":"Sierra Madre del Sur",
+    "region_code":53
+  },
+  {
+    "primary_name":"Sierra Norte de Puebla-Oaxaca",
+    "region_code":54
+  },
+  {
+    "primary_name":"Planicie Noroccidental de Yucatan",
+    "region_code":55
+  },
+  {
+    "primary_name":"Planicie de la Peninsula de Yucatan",
+    "region_code":56
+  },
+  {
+    "primary_name":"Isla Cozumel",
+    "region_code":57
+  },
+  {
+    "primary_name":"Altos de Chiapas",
+    "region_code":58
+  },
+  {
+    "primary_name":"Depresiones Intermontanas",
+    "region_code":59
+  },
+  {
+    "primary_name":"Sierra Madre de Chiapas",
+    "region_code":60
+  },
+  {
+    "primary_name":"Planicie Costera del Soconusco",
+    "region_code":61
+  },
+  {
+    "primary_name":"Archipielago de Revillagigedo",
+    "region_code":62
+  },
+  {
+    "primary_name":"Isla Guadalupe",
+    "region_code":63
+  },
+  {
+    "primary_name":"Arrecife Alacranes",
+    "region_code":64
+  },
+  {
+    "primary_name":"Los Tuxtlas",
+    "region_code":65
+  },
+  {
+    "primary_name":"Pantanos de Centla-Laguna de Terminos",
+    "region_code":66
+  }
+]
