@@ -22,7 +22,7 @@ router.get('/data/obs/geo/recent', function(req, res, next) {
     var url = 'http://ebird.org/ws1.1/data/obs/geo/recent?' +
         Qs.stringify(req.query) + '&fmt=json';
     request(url, function (err, resp, body) {
-        data = {
+        var data = {
             err: err,
             resp: resp,
             body: body
@@ -47,23 +47,26 @@ router.get('/data/obs/geo/recent', function(req, res, next) {
         //}
         //
         //getBatch(0);
+        var images = [];
         for (var i = 0; i < 1; i++) {
             console.log(bodyParsed[i].comName);
 
-            client.getArticle(bodyParsed[i].comName, function (err, data) {
+            client.getArticle(bodyParsed[i].comName, function (err, articleData) {
                 if (err) { console.error(err) }
                 console.log('article: ');
-                console.log(typeof data);
+                console.log(typeof articleData);
+                client.getImagesFromArticle(bodyParsed[i].comName, function (err, imageData) {
+                    if (err) { console.error(err) }
+                    console.log('images: ');
+                    console.log(imageData);
+                    imageData.forEach(function (image) {
+                        images.push(image);
+                    });
+                    data.images = images;
+                    res.send(data);
+                })
             });
-
-            client.getImagesFromArticle(bodyParsed[i].comName, function (err, data) {
-                if (err) { console.error(err) }
-                console.log('images: ');
-                console.log(data);
-            })
         }
-
-        res.send(data);
     })
 });
 
