@@ -1,70 +1,68 @@
 doctype html
 html
-  head
-    title US eBird-compare
-    link(href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css", rel="stylesheet")
-    link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css')
-    link(rel="stylesheet" href="/css/style.css")
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
-  body
-    div(align='center')
-        img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
-        img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
-        img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
-        img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
-        img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
-        img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
-        img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
-        hr
-        h1 US eBird-compare
-        hr
-    div(align='center')
-        b Species Name:
-        input(type="text", name="species")
-        input(type='submit',value='Select')
-        br
-        br
-    div(align='center')
-        table
-            tr 
-                td
-                    b Region 1 
-                    select
-                        each state, i in states
-                            option(value=i) #{state.name}
-                    input(type='submit',value='Choose')
-                    br
-                    br
-                    #map1(style='height: 400px; width: 500px')
-                    script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
-                    script(src='/js/map1.js')
-                td
-                    b Region 2 
-                    select
-                        each state, i in states
-                            option(value=i) #{state.name}
-                    input(type='submit',value='Choose')
-                    br
-                    br
-                    #map2(style='height: 400px; width: 500px')
-                    script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
-                    script(src='/js/map2.js')
-    div(align='center')
-        input(type='submit',value='Compare')
-    div(align='center')
-        table
-            tr
-                td
-                    div.box
-                        b Birds no = 
-                td
-                    div.box
-                        b Birds no = 
+    head
+        title US eBird-compare
+        link(href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css", rel="stylesheet")
+        link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css')
+        link(rel="stylesheet" href="/css/style.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+        script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+        script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
+    body
+        div(align='center')
+            - var n = 0
+            while n < 7
+                - n++
+                img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
+            hr
+            h1 US eBird-compare
+            hr
+        div(align='center')
+            b Species Name:
+            input(type="text", name="species")
+            input(type='submit',value='Select')
+            br
+            br
+        div(align='center')
+            table
+                tr
+                    td
+                        b Region 1
+                        select
+                            each state, i in states
+                                option(value=i) #{state.name}
+                        input(type='submit',value='Choose')
+                        br
+                        br
+                        #map1(style='height: 400px; width: 500px')
 
-    button#recent_nearby_observations Return recent nearby observations
+                    td
+                        b Region 2
+                        select
+                            each state, i in states
+                                option(value=i) #{state.name}
+                        input(type='submit',value='Choose')
+                        br
+                        br
+                        #map2(style='height: 400px; width: 500px')
 
-    #response
-  
-  script(src="js/main.js")
-  script(src="js/jade.js")
+        div(align='center')
+            input(type='submit',value='Compare')
+        div(align='center')
+            table
+                tr
+                    td
+                        div.box
+                            b Birds no =
+                    td
+                        div.box
+                            b Birds no =
+
+        button#recent_nearby_observations Return recent nearby observations
+
+        #response
+
+    script(src="js/main.js")
+    script(src="js/jade.js")
+    script(src='/js/map1.js')
+    script(src='/js/map2.js')
