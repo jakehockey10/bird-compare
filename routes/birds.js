@@ -17,8 +17,6 @@ var router = express.Router();
 
 /* Returns recent nearby observations. */
 router.get('/data/obs/geo/recent', function(req, res, next) {
-    console.log(req.query);
-
     var url = 'http://ebird.org/ws1.1/data/obs/geo/recent?' +
         Qs.stringify(req.query) + '&fmt=json';
     request(url, function (err, resp, body) {
@@ -27,10 +25,8 @@ router.get('/data/obs/geo/recent', function(req, res, next) {
             resp: resp,
             body: body
         };
-        console.log(data.body);
-
-        var bodyParsed = JSON.parse(data.body);
-        var imageArray = [];
+        //var bodyParsed = JSON.parse(data.body);
+        //var imageArray = [];
 
         //function getBatch(start) {
         //    client.getImages(start, function(err, data, next) {
@@ -48,13 +44,13 @@ router.get('/data/obs/geo/recent', function(req, res, next) {
         //
         //getBatch(0);
         //var images = [];
-        for (var i = 0; i < 1; i++) {
-            console.log(bodyParsed[i].comName);
-
-            client.getArticle(bodyParsed[i].comName, function (err, articleData) {
-                if (err) { console.error(err) }
-                console.log('article: ');
-                console.log(typeof articleData);
+        //for (var i = 0; i < 1; i++) {
+        //    console.log(bodyParsed[i].comName);
+        //
+        //    client.getArticle(bodyParsed[i].comName, function (err, articleData) {
+        //        if (err) { console.error(err) }
+        //        console.log('article: ');
+        //        console.log(typeof articleData);
                 //client.getImagesFromArticle(bodyParsed[i].comName, function (err, imageData) {
                 //    if (err) { console.error(err) }
                 //    console.log('images: ');
@@ -63,10 +59,26 @@ router.get('/data/obs/geo/recent', function(req, res, next) {
                 //        images.push(image);
                 //    });
                 //    data.images = images;
-                    res.send(data);
+        res.send(data);
                 //})
-            });
-        }
+            //});
+        //}
+    })
+});
+
+/**
+ * Express route for "Nearest Locations With Observations Of A Species" endpoint of the eBird API.
+ */
+router.get('/data/nearest/geo_spp/recent', function(req, res, next) {
+    var url = 'http://ebird.org/ws1.1/data/nearest/geo_spp/recent?' +
+        Qs.stringify(req.query) + '&fmt=json';
+    request(url, function (err, resp, body) {
+        var data = {
+            err: err,
+            resp: resp,
+            body: body
+        };
+        res.send(data);
     })
 });
 

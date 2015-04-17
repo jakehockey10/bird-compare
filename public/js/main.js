@@ -9,34 +9,53 @@
  * @constructor
  */
 var Map = function (map) {
+    var fitBoundsOfMapToMarkerGroupBounds = function (markers) {
+        var group = new L.featureGroup(markers);
+        map.fitBounds(group.getBounds());
+    };
+
+    var constructMarkersForEBirdResults = function (objects, template) {
+        var latLngs = [];
+        var markers = [];
+        var object, html, marker;
+        for (var i = 0; i < objects.length; i++) {
+            object = objects[i];
+            html = jade.render(template, {observation: object});
+            latLngs.push(L.latLng(object.lat, object.lng));
+            marker = L.marker([object.lat, object.lng]).addTo(map);
+            marker.bindPopup(html);
+            markers.push(marker);
+        }
+
+        return markers;
+    };
+
     return {
         /**
          * reference to DOM element
          */
         map: map,
         /**
-         * render the observations that comes from the "Recent Nearby Observations" endpoint of the eBird API.
+         * Render the observations that comes from the "Recent Nearby Observations" endpoint of the eBird API.
          * @param observations
          */
         addRecentNearbyObservationsAsMarkers: function (observations) {
-            // make markers
-            var markers = [];
-            var latLngs = [];
-
-            $.get('/views/marker.jade', function (template) {
-                var observation, html, marker;
-                for (var i = 0; i < observations.length; i++) {
-                    observation = observations[i];
-                    html = jade.render(template, { observation: observation });
-                    latLngs.push(L.latLng(observation.lat, observation.lng));
-                    marker = L.marker([observation.lat, observation.lng]).addTo(map);
-                    marker.bindPopup(html);
-                    markers.push(marker);
-                }
+            $.get('/views/observationMarker.jade', function (template) {
+                markers = constructMarkersForEBirdResults(observations, template);
             }).success(function () {
-                var group = new L.featureGroup(markers);
-                map.fitBounds(group.getBounds());
+                fitBoundsOfMapToMarkerGroupBounds(markers);
             });
+        },
+        /**
+         * Render the locations that comes from the "Nearest Locations With Observations Of A Species" endpoint of the eBird API.
+         * @param locations
+         */
+        addNearestLocationsWithObservationsOfASpecies: function (locations) {
+            $.get('/views/locationMarker.jade', function (template) {
+                markers = constructMarkersForEBirdResults(locations, template);
+            }).success(function () {
+                fitBoundsOfMapToMarkerGroupBounds(markers);
+            })
         },
         /**
          * Adds a marker at the location of latLng.  Also binds a popup to it, but it is a silly little popup.
@@ -155,9 +174,9 @@ Map1.addPopup();
 Map2.addPopupWithClickListener();
 
 /**
- * When the DOM is ready...
+ * Set the click listener for the "Recent Nearby Observations" button.
  */
-$(document).ready(function() {
+function setRecentNearbyObservationsClickListener() {
     $('#recent_nearby_observations').on('click', function () {
         var parameters = {
             lat: 42.46,
@@ -170,10 +189,9 @@ $(document).ready(function() {
             } else if (data.template) {
                 $('#response').html(data.template);
             } else if (data.body) {
-                $.get('/views/response.jade', function (template) {
+                $.get('/views/observationResponse.jade', function (template) {
                     var response = JSON.parse(data.body);
-                    var html = jade.render(template, { items: response });
-                    console.log(data.resp);
+                    var html = jade.render(template, {items: response});
                     $('#response').html(html);
 
                     Map1.addRecentNearbyObservationsAsMarkers(response);
@@ -183,4 +201,46 @@ $(document).ready(function() {
             }
         })
     })
+}
+
+/**
+ * Set the click listener for the "Recent Nearby Observations" button.
+ */
+function setNearestLocationsWithObservationsOfASpeciesClickListener() {
+    $('#nearest_locations_of_species').on('click', function () {
+        var parameters = {
+            lat: 42.46,
+            lng: -76.51,
+            sci: 'Branta canadensis'
+        };
+
+        $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
+            var response = JSON.parse(data.body);
+            if (data.err) {
+                $('#response').html(JSON.stringify(data.err));
+            } else if (response[0].errorCode) {
+                $('#response').html(JSON.stringify(response[0].errorMsg));
+            } else if (data.template) {
+                $('#response').html(data.template);
+            } else if (data.body) {
+                $.get('/views/locationResponse.jade', function (template) {
+                    var html = jade.render(template, {items: response});
+                    $('#response').html(html);
+                    console.log(JSON.stringify(response, null, 2));
+
+                    Map1.addNearestLocationsWithObservationsOfASpecies(response);
+                });
+            } else {
+                $('#response').html('something went wrong.');
+            }
+        })
+    })
+}
+
+/**
+ * When the DOM is ready...
+ */
+$(document).ready(function() {
+    setRecentNearbyObservationsClickListener();
+    setNearestLocationsWithObservationsOfASpeciesClickListener();
 });
