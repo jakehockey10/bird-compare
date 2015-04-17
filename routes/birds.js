@@ -47,7 +47,7 @@ router.get('/data/obs/geo/recent', function(req, res, next) {
         //}
         //
         //getBatch(0);
-        var images = [];
+        //var images = [];
         for (var i = 0; i < 1; i++) {
             console.log(bodyParsed[i].comName);
 
@@ -55,16 +55,16 @@ router.get('/data/obs/geo/recent', function(req, res, next) {
                 if (err) { console.error(err) }
                 console.log('article: ');
                 console.log(typeof articleData);
-                client.getImagesFromArticle(bodyParsed[i].comName, function (err, imageData) {
-                    if (err) { console.error(err) }
-                    console.log('images: ');
-                    console.log(imageData);
-                    imageData.forEach(function (image) {
-                        images.push(image);
-                    });
-                    data.images = images;
+                //client.getImagesFromArticle(bodyParsed[i].comName, function (err, imageData) {
+                //    if (err) { console.error(err) }
+                //    console.log('images: ');
+                //    console.log(imageData);
+                //    imageData.forEach(function (image) {
+                //        images.push(image);
+                //    });
+                //    data.images = images;
                     res.send(data);
-                })
+                //})
             });
         }
     })
