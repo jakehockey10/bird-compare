@@ -1,26 +1,12 @@
-//.media
-//    .media-left
-//        a(href='#')
-//            - console.log(observation)
-//            img.media-object(src='...', alt='...')
-//    .media-body
-//        h4.media-heading.text-center
-//            span.badge.pull-right= observation.howMany
-//            | #{' ' + observation.sciName + ' '}
-//            small= observation.sciName
-//        dl.dl-horizontal
-//            dt Where
-//            dd= observation.locName
-//            dt When
-//            dd= new Date(observation.obsDt).toLocaleString()
 .thumbnail
     img(src='...', alt='...')
     .caption
         h4
             span.badge.pull-right= observation.howMany
             | #{' ' + observation.sciName + ' '}
+            br
             small= observation.sciName
-        dl.dl-horizontal
+        dl.dl-horizontal.no-left-margin
             dt Where
             dd= observation.locName
             dt When

@@ -24,3 +24,12 @@ td
 	width: 50%;
 	padding: 15px; 
 }
+
+
+dl.no-left-margin > dt {
+    width: 100px !important;
+}
+
+dl.no-left-margin > dd {
+    margin-left: 120px;
+}
