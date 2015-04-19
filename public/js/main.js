@@ -9,31 +9,38 @@
  * @constructor
  */
 var Map = function (map) {
-    var fitBoundsOfMapToMarkerGroupBounds = function (markers) {
-        var group = new L.featureGroup(markers);
-        map.fitBounds(group.getBounds());
-    };
+    this.map = map;
+
+    var fitBoundsOfMapToMarkerGroupBounds = function () {
+        console.log("fitBounds: this is " + this);
+        this.map.fitBounds(this.markers.getBounds());
+    }.bind(this);
+
+    var removeAllMarkers = function () {
+        if (this.markers) {
+            this.markers.clearLayers();
+        }
+    }.bind(this);
 
     var constructMarkersForEBirdResults = function (objects, template) {
         var latLngs = [];
         var markers = [];
         var object, html, marker;
+        removeAllMarkers();
         for (var i = 0; i < objects.length; i++) {
             object = objects[i];
             html = jade.render(template, {observation: object});
             latLngs.push(L.latLng(object.lat, object.lng));
-            marker = L.marker([object.lat, object.lng]).addTo(map);
+            marker = L.marker([object.lat, object.lng]);
             marker.bindPopup(html);
             markers.push(marker);
         }
 
-        return markers;
-    };
+        this.markers = new L.featureGroup(markers);
+        map.addLayer(this.markers);
+    }.bind(this);
 
     return {
-        /**
-         * reference to DOM element
-         */
         map: map,
         /**
          * Render the observations that comes from the "Recent Nearby Observations" endpoint of the eBird API.
@@ -41,9 +48,9 @@ var Map = function (map) {
          */
         addRecentNearbyObservationsAsMarkers: function (observations) {
             $.get('/views/observationMarker.jade', function (template) {
-                markers = constructMarkersForEBirdResults(observations, template);
+                constructMarkersForEBirdResults(observations, template);
             }).success(function () {
-                fitBoundsOfMapToMarkerGroupBounds(markers);
+                fitBoundsOfMapToMarkerGroupBounds();
             });
         },
         /**
@@ -52,9 +59,9 @@ var Map = function (map) {
          */
         addNearestLocationsWithObservationsOfASpecies: function (locations) {
             $.get('/views/locationMarker.jade', function (template) {
-                markers = constructMarkersForEBirdResults(locations, template);
+                constructMarkersForEBirdResults(locations, template);
             }).success(function () {
-                fitBoundsOfMapToMarkerGroupBounds(markers);
+                fitBoundsOfMapToMarkerGroupBounds();
             })
         },
         /**
@@ -64,9 +71,10 @@ var Map = function (map) {
          */
         addMarker: function (latLng) {
             latLng = latLng || [51.5, -0.09];
-            var marker = L.marker(latLng).addTo(map);
+            var marker = L.marker(latLng).addTo(this.map);
             // TODO: Make the binding of a popup more dynamic (i.e. opt-in/opt-out, customize message, etc.)
             marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+            // TODO: Add to this object's markers collection?
         },
         /**
          * Adds a circle at the location of latLng.  Also binds a popup to it, but it is a silly little popup.
@@ -87,7 +95,7 @@ var Map = function (map) {
                 color: color,
                 fillColor: fillColor,
                 fillOpacity: fillOpacity
-            }).addTo(map);
+            }).addTo(this.map);
             // TODO: make the binding of a popup more dynamic (i.e. opt-in/opt-out, customize message, etc.)
             circle.bindPopup("I am a circle.");
         },
@@ -102,7 +110,7 @@ var Map = function (map) {
                 [51.503, -0.06],
                 [51.51, -0.047]
             ];
-            var polygon = L.polygon(latLngs).addTo(map);
+            var polygon = L.polygon(latLngs).addTo(this.map);
             polygon.bindPopup("I am a polygon.");
         },
         /**
@@ -114,7 +122,7 @@ var Map = function (map) {
             var popup = L.popup()
                 .setLatLng(latLng)
                 .setContent("I am a standalone popup.")
-                .openOn(map);
+                .openOn(this.map);
         },
         /**
          * Adds a popup that appears where the user clicks on the map.
@@ -128,7 +136,7 @@ var Map = function (map) {
                     .openOn(map);
             }
 
-            map.on('click', onMapClick);
+            this.map.on('click', onMapClick);
         }
     };
 };
