@@ -19,6 +19,7 @@ html
             hr
             h1 US eBird-compare
             hr
+
         div(align='center')
             table
                 tr
@@ -40,14 +41,14 @@ html
                         br
                         #map2(style='height: 400px; width: 500px')
 
-
         div(align='center')
-            b Bird Species:
+            b Species Name:
             select(id="B", name="bird_Species", onchange='AddBirdsToBothMaps()')
-                each eBird in taxa_eBird
-                    option(value= eBird.scientific_name ) #{eBird.common_name}
+                each sp , i in species
+                    option(value=i) #{sp.common_name}
             br
             br
+
         div(align='center')
             table
                 tr
