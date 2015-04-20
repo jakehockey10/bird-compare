@@ -10,7 +10,7 @@ html
         script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
         script(src="/leaflet/leaflet-src.js")
         //script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
-      body
+    body
         div(align='center')
             - var n = 0
             while n < 7
@@ -25,18 +25,18 @@ html
                 tr
                     td
                         b Region 1
-                        select(id="R1", name="Region1", onchange='changeMapView(1)')
+                        select(id="R1", name="Region1", onchange='Map1.changeView(this)')
                             each state in states
-                                option(value= state.abbreviation ) #{state.name}
+                                option(value = state.abbreviation, data-lat = state.location.lat, data-lng = state.location.lng) #{state.name}
                         br
                         br
                         #map1(style='height: 400px; width: 500px')
 
                     td
                         b Region 2
-                        select(id="R2", name="Region2", onchange='changeMapView(2)')
+                        select(id="R2", name="Region2", onchange='Map2.changeView(this)')
                             each state in states
-                                option(value= state.abbreviation ) #{state.name}
+                                option(value = state.abbreviation, data-lat = state.location.lat, data-lng = state.location.lng) #{state.name}
                         br
                         br
                         #map2(style='height: 400px; width: 500px')

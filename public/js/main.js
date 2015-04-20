@@ -9,345 +9,63 @@
  * @constructor
  */
 
-//var statesJeo = require('/data/statesJeo.json');
-var statesJeo =
-[
-  {
-    "FIELD1":"state",
-    "FIELD2":"latitude",
-    "FIELD3":"longitude"
-  },
-  {
-    "FIELD1":"AK",
-    "FIELD2":"61.3850",
-    "FIELD3":"-152.2683"
-  },
-  {
-    "FIELD1":"AL",
-    "FIELD2":"32.7990",
-    "FIELD3":"-86.8073"
-  },
-  {
-    "FIELD1":"AR",
-    "FIELD2":"34.9513",
-    "FIELD3":"-92.3809"
-  },
-  {
-    "FIELD1":"AS",
-    "FIELD2":"14.2417",
-    "FIELD3":"-170.7197"
-  },
-  {
-    "FIELD1":"AZ",
-    "FIELD2":"33.7712",
-    "FIELD3":"-111.3877"
-  },
-  {
-    "FIELD1":"CA",
-    "FIELD2":"36.1700",
-    "FIELD3":"-119.7462"
-  },
-  {
-    "FIELD1":"CO",
-    "FIELD2":"39.0646",
-    "FIELD3":"-105.3272"
-  },
-  {
-    "FIELD1":"CT",
-    "FIELD2":"41.5834",
-    "FIELD3":"-72.7622"
-  },
-  {
-    "FIELD1":"DC",
-    "FIELD2":"38.8964",
-    "FIELD3":"-77.0262"
-  },
-  {
-    "FIELD1":"DE",
-    "FIELD2":"39.3498",
-    "FIELD3":"-75.5148"
-  },
-  {
-    "FIELD1":"FL",
-    "FIELD2":"27.8333",
-    "FIELD3":"-81.7170"
-  },
-  {
-    "FIELD1":"GA",
-    "FIELD2":"32.9866",
-    "FIELD3":"-83.6487"
-  },
-  {
-    "FIELD1":"HI",
-    "FIELD2":"21.1098",
-    "FIELD3":"-157.5311"
-  },
-  {
-    "FIELD1":"IA",
-    "FIELD2":"42.0046",
-    "FIELD3":"-93.2140"
-  },
-  {
-    "FIELD1":"ID",
-    "FIELD2":"44.2394",
-    "FIELD3":"-114.5103"
-  },
-  {
-    "FIELD1":"IL",
-    "FIELD2":"40.3363",
-    "FIELD3":"-89.0022"
-  },
-  {
-    "FIELD1":"IN",
-    "FIELD2":"39.8647",
-    "FIELD3":"-86.2604"
-  },
-  {
-    "FIELD1":"KS",
-    "FIELD2":"38.5111",
-    "FIELD3":"-96.8005"
-  },
-  {
-    "FIELD1":"KY",
-    "FIELD2":"37.6690",
-    "FIELD3":"-84.6514"
-  },
-  {
-    "FIELD1":"LA",
-    "FIELD2":"31.1801",
-    "FIELD3":"-91.8749"
-  },
-  {
-    "FIELD1":"MA",
-    "FIELD2":"42.2373",
-    "FIELD3":"-71.5314"
-  },
-  {
-    "FIELD1":"MD",
-    "FIELD2":"39.0724",
-    "FIELD3":"-76.7902"
-  },
-  {
-    "FIELD1":"ME",
-    "FIELD2":"44.6074",
-    "FIELD3":"-69.3977"
-  },
-  {
-    "FIELD1":"MI",
-    "FIELD2":"43.3504",
-    "FIELD3":"-84.5603"
-  },
-  {
-    "FIELD1":"MN",
-    "FIELD2":"45.7326",
-    "FIELD3":"-93.9196"
-  },
-  {
-    "FIELD1":"MO",
-    "FIELD2":"38.4623",
-    "FIELD3":"-92.3020"
-  },
-  {
-    "FIELD1":"MP",
-    "FIELD2":"14.8058",
-    "FIELD3":"145.5505"
-  },
-  {
-    "FIELD1":"MS",
-    "FIELD2":"32.7673",
-    "FIELD3":"-89.6812"
-  },
-  {
-    "FIELD1":"MT",
-    "FIELD2":"46.9048",
-    "FIELD3":"-110.3261"
-  },
-  {
-    "FIELD1":"NC",
-    "FIELD2":"35.6411",
-    "FIELD3":"-79.8431"
-  },
-  {
-    "FIELD1":"ND",
-    "FIELD2":"47.5362",
-    "FIELD3":"-99.7930"
-  },
-  {
-    "FIELD1":"NE",
-    "FIELD2":"41.1289",
-    "FIELD3":"-98.2883"
-  },
-  {
-    "FIELD1":"NH",
-    "FIELD2":"43.4108",
-    "FIELD3":"-71.5653"
-  },
-  {
-    "FIELD1":"NJ",
-    "FIELD2":"40.3140",
-    "FIELD3":"-74.5089"
-  },
-  {
-    "FIELD1":"NM",
-    "FIELD2":"34.8375",
-    "FIELD3":"-106.2371"
-  },
-  {
-    "FIELD1":"NV",
-    "FIELD2":"38.4199",
-    "FIELD3":"-117.1219"
-  },
-  {
-    "FIELD1":"NY",
-    "FIELD2":"42.1497",
-    "FIELD3":"-74.9384"
-  },
-  {
-    "FIELD1":"OH",
-    "FIELD2":"40.3736",
-    "FIELD3":"-82.7755"
-  },
-  {
-    "FIELD1":"OK",
-    "FIELD2":"35.5376",
-    "FIELD3":"-96.9247"
-  },
-  {
-    "FIELD1":"OR",
-    "FIELD2":"44.5672",
-    "FIELD3":"-122.1269"
-  },
-  {
-    "FIELD1":"PA",
-    "FIELD2":"40.5773",
-    "FIELD3":"-77.2640"
-  },
-  {
-    "FIELD1":"PR",
-    "FIELD2":"18.2766",
-    "FIELD3":"-66.3350"
-  },
-  {
-    "FIELD1":"RI",
-    "FIELD2":"41.6772",
-    "FIELD3":"-71.5101"
-  },
-  {
-    "FIELD1":"SC",
-    "FIELD2":"33.8191",
-    "FIELD3":"-80.9066"
-  },
-  {
-    "FIELD1":"SD",
-    "FIELD2":"44.2853",
-    "FIELD3":"-99.4632"
-  },
-  {
-    "FIELD1":"TN",
-    "FIELD2":"35.7449",
-    "FIELD3":"-86.7489"
-  },
-  {
-    "FIELD1":"TX",
-    "FIELD2":"31.1060",
-    "FIELD3":"-97.6475"
-  },
-  {
-    "FIELD1":"UT",
-    "FIELD2":"40.1135",
-    "FIELD3":"-111.8535"
-  },
-  {
-    "FIELD1":"VA",
-    "FIELD2":"37.7680",
-    "FIELD3":"-78.2057"
-  },
-  {
-    "FIELD1":"VI",
-    "FIELD2":"18.0001",
-    "FIELD3":"-64.8199"
-  },
-  {
-    "FIELD1":"VT",
-    "FIELD2":"44.0407",
-    "FIELD3":"-72.7093"
-  },
-  {
-    "FIELD1":"WA",
-    "FIELD2":"47.3917",
-    "FIELD3":"-121.5708"
-  },
-  {
-    "FIELD1":"WI",
-    "FIELD2":"44.2563",
-    "FIELD3":"-89.6385"
-  },
-  {
-    "FIELD1":"WV",
-    "FIELD2":"38.4680",
-    "FIELD3":"-80.9696"
-  },
-  {
-    "FIELD1":"WY",
-    "FIELD2":"42.7475",
-    "FIELD3":"-107.2085"
-  }
-];
-
-
-var changeMapView = function(id) {
-    if (id == 1 )
-    {
-
-        var e = document.getElementById("R1");
-        var strUser= e.options[e.selectedIndex].value;
-        console.log(strUser);
-    }
-    else
-    {
-
-        var e = document.getElementById("R2");
-        var strUser= e.options[e.selectedIndex].value;
-        console.log(strUser);
-    }
-
-    for (i in statesJeo) 
-    {
-        console.log(statesJeo[i].FIELD1);
-        if (statesJeo[i].FIELD1 == strUser)
-        {
-            if (id == 1 ){
-                Map1.changeView(statesJeo[i].FIELD2, statesJeo[i].FIELD3,6);
-                break;
-            }
-            else
-            {
-                Map2.changeView(statesJeo[i].FIELD2, statesJeo[i].FIELD3,6);
-                break;
-            }
-            
-        }
-    }
-}
-
-var AddBirdsToBothMaps = function() {
-    console.log('Hi');
-}
-
 var Map = function (map) {
+    /**
+     * A little description of what this is:
+     *
+     * Inside this function, we create a Map object.  These first few assignments
+     * and function declarations ('this.[...]' or 'var ...') are considered "private"
+     * and are things that cannot be called on the object after it is instantiated.
+     * The object that is instantiated when using a statement like 'var Map1 = new
+     * Map(...)' executes this function.  This function first sets 'this.map = map'
+     * ('map' is the map passed in), then it declares a few functions that get used
+     * inside of the returned object.  Everything inside the object being returned
+     * is "front-facing," or in other words, able to be called on the object after
+     * it is instantiated (returned into a variable that we call upon later).  The
+     * real reason for having anything private here is really just to help with the
+     * organization and readability of this large object.
+     */
+
+    /**
+     * Set the private instance of the map's DOM element
+     */
     this.map = map;
 
+    /**
+     * Center and zoom the map around the set of markers that are on the map.
+     * @type {function(this:Map)}
+     */
     var fitBoundsOfMapToMarkerGroupBounds = function () {
         console.log("fitBounds: this is " + this);
         this.map.fitBounds(this.markers.getBounds());
-    }.bind(this);
+    }.bind(this);   // See below...
 
+    /**
+     * Remove all the markers on the map.
+     * @type {function(this:Map)}
+     */
     var removeAllMarkers = function () {
         if (this.markers) {
             this.markers.clearLayers();
         }
     }.bind(this);
+    // ---------------------------------------------------------------
+    // About .bind(this)
+    // ---------------------------------------------------------------
+    // .bind(this) makes it so that the 'this' inside the method above
+    // refers to the same 'this' outside the function above.  This is important.
+    // Outside this function, 'this' refers to the instance of Map we are
+    // creating when this gets executed.  Inside the function, and without
+    // .bind(this), 'this' refers to the window in the browser because
+    // that's the default when it doesn't know what you are referring to.
+    // And it doesn't know what you are referring to because inside the
+    // function body, the scope is different that outside the function
+    // and 'this' is directly tied to the scope of execution.
 
+    /**
+     * Create the markers for the results that come back from a call to the eBird API.
+     * @type {function(this:Map)}
+     */
     var constructMarkersForEBirdResults = function (objects, template) {
         var latLngs = [];
         var markers = [];
@@ -366,8 +84,13 @@ var Map = function (map) {
         map.addLayer(this.markers);
     }.bind(this);
 
+    // This is what we are actually returning in a statement like 'var Map1 = new Map(...)':
     return {
         map: map,
+        /**
+         * center will hold the current center of the map view.
+         */
+        center: {},
         /**
          * Render the observations that comes from the "Recent Nearby Observations" endpoint of the eBird API.
          * @param observations
@@ -465,8 +188,12 @@ var Map = function (map) {
             this.map.on('click', onMapClick);
         },
 
-        changeView: function (x, y, zoom) {
-            this.map.setView(new L.LatLng(x, y), zoom);
+        changeView: function (select) {
+            var option = $('#' + select.id + ' option:selected');
+            var lat = option.data('lat');
+            var lng = option.data('lng');
+            this.map.setView(new L.LatLng(lat, lng), 6);
+            this.center = {lat: lat, lng: lng};
         }
     };
 };
@@ -493,6 +220,8 @@ function setThenGetDOMMapView(id, center, zoom) {
     return map;
 }
 
+
+// TODO: We need to figure out what we want the maps to default to...
 /**
  * Create Map objects that point to the DOM element maps via the map property (i.e. Map1.map)
  * as well as adding markers, circles, polygons, popups, popups with click listeners, etc.  This Map
@@ -503,6 +232,7 @@ function setThenGetDOMMapView(id, center, zoom) {
 var Map1 = new Map(setThenGetDOMMapView('map1', [51.505, -0.09], 13));
 var Map2 = new Map(setThenGetDOMMapView('map2', [32.7990, -86.8073], 7));
 
+// TODO: When do you guys want to get rid of these?
 /**
  * Keep the examples that were in map1.js and map2.js from before, for now.
  */
@@ -511,37 +241,76 @@ Map1.addCircle();
 Map1.addPolygon();
 Map1.addPopup();
 Map2.addPopupWithClickListener();
-//Map1.changeView(51.505, -0.09, 17);
 
+/**
+ * This method finds the recent nearby observations for the map passed in.  This
+ * was made a method to avoid having to duplicate this code for Map1 and Map2.
+ * Our Map function up above has a center property that we can use for the
+ * location parameter.
+ * @param map
+ */
+function findRecentNearbyObservationsForMap(map) {
+    var location = {
+        lat: map.center.lat,
+        lng: map.center.lng
+    };
 
+    $.get('/birds/data/obs/geo/recent', location, function (data) {
+        if (data.err) {
+            $('#response').html(JSON.stringify(data.err))
+        } else if (data.template) {
+            $('#response').html(data.template);
+        } else if (data.body) {
+            $.get('/views/observationResponse.jade', function (template) {
+                var response = JSON.parse(data.body);
+                var html = jade.render(template, {items: response});
+                $('#response').html(html);
+
+                map.addRecentNearbyObservationsAsMarkers(response);
+            });
+        } else {
+            $('#response').html('something went wrong.');
+        }
+    })
+}
+
+/**
+ * This method finds the nearest locations with observations of a species for the map passed in.
+ * This method was extracted (like the one above) to avoid code duplication.
+ */
+function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
+    var parameters = {
+        lat: map.center.lat,
+        lng: map.center.lng
+    };
+
+    $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
+        var response = JSON.parse(data.body);
+        if (data.err) {
+            $('#response').html(JSON.stringify(data.err));
+        } else if (response[0].errorCode) {
+            $('#response').html(JSON.stringify(response[0].errorMsg));
+        } else if (data.template) {
+            $('#response').html(data.template);
+        } else if (data.body) {
+            $.get('/views/locationResponse.jade', function (template) {
+                var html = jade.render(template, {items: response});
+                $('#response').html(html);
+
+                map.addNearestLocationsWithObservationsOfASpecies(response);
+            });
+        } else {
+            $('#response').html('something went wrong.');
+        }
+    })
+}
 
 /**
  * Set the click listener for the "Recent Nearby Observations" button.
  */
 function setRecentNearbyObservationsClickListener() {
     $('#recent_nearby_observations').on('click', function () {
-        var parameters = {
-            lat: 42.46,
-            lng: -76.51
-        };
-
-        $.get('/birds/data/obs/geo/recent', parameters, function (data) {
-            if (data.err) {
-                $('#response').html(JSON.stringify(data.err))
-            } else if (data.template) {
-                $('#response').html(data.template);
-            } else if (data.body) {
-                $.get('/views/observationResponse.jade', function (template) {
-                    var response = JSON.parse(data.body);
-                    var html = jade.render(template, {items: response});
-                    $('#response').html(html);
-
-                    Map1.addRecentNearbyObservationsAsMarkers(response);
-                });
-            } else {
-                $('#response').html('something went wrong.');
-            }
-        })
+        [Map1, Map2].forEach(function (map) {findRecentNearbyObservationsForMap(map)});
     })
 }
 
@@ -550,32 +319,7 @@ function setRecentNearbyObservationsClickListener() {
  */
 function setNearestLocationsWithObservationsOfASpeciesClickListener() {
     $('#nearest_locations_of_species').on('click', function () {
-        var parameters = {
-            lat: 42.46,
-            lng: -76.51,
-            sci: 'Branta canadensis'
-        };
-
-        $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
-            var response = JSON.parse(data.body);
-            if (data.err) {
-                $('#response').html(JSON.stringify(data.err));
-            } else if (response[0].errorCode) {
-                $('#response').html(JSON.stringify(response[0].errorMsg));
-            } else if (data.template) {
-                $('#response').html(data.template);
-            } else if (data.body) {
-                $.get('/views/locationResponse.jade', function (template) {
-                    var html = jade.render(template, {items: response});
-                    $('#response').html(html);
-                    console.log(JSON.stringify(response, null, 2));
-
-                    Map1.addNearestLocationsWithObservationsOfASpecies(response);
-                });
-            } else {
-                $('#response').html('something went wrong.');
-            }
-        })
+        [Map1, Map2].forEach(function (map) {findNearestLocationsWithObservationsOfASpeciesForMap(map)});
     })
 }
 
