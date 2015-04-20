@@ -21,7 +21,9 @@ html
             hr
         div(align='center')
             b Species Name:
-            input(type="text", name="species")
+            select
+                each sp , i in species
+                    option(value=i) #{sp.common_name}
             input(type='submit',value='Select')
             br
             br

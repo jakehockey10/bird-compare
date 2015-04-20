@@ -3,13 +3,14 @@ var app = express();
 
 var birds = require('./routes/birds');
 var states = require('./data/states.json');
+var species= require('./data/taxa_eBird.json');
 
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'jade');
 
 app.get('/', function(req, res) {
-  res.render('index.jade', { states: states })
+  res.render('index.jade', { states: states, species: species})
 });
 
 app.use('/birds', birds);
