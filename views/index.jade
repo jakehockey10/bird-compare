@@ -10,7 +10,7 @@ html
         script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
         script(src="/leaflet/leaflet-src.js")
         //script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
-    body
+      body
         div(align='center')
             - var n = 0
             while n < 7
@@ -20,36 +20,34 @@ html
             h1 US eBird-compare
             hr
         div(align='center')
-            b Species Name:
-            input(type="text", name="species")
-            input(type='submit',value='Select')
-            br
-            br
-        div(align='center')
             table
                 tr
                     td
                         b Region 1
-                        select
-                            each state, i in states
-                                option(value=i) #{state.name}
-                        input(type='submit',value='Choose')
+                        select(id="R1", name="Region1", onchange='changeMapView(1)')
+                            each state in states
+                                option(value= state.abbreviation ) #{state.name}
                         br
                         br
                         #map1(style='height: 400px; width: 500px')
 
                     td
                         b Region 2
-                        select
-                            each state, i in states
-                                option(value=i) #{state.name}
-                        input(type='submit',value='Choose')
+                        select(id="R2", name="Region2", onchange='changeMapView(2)')
+                            each state in states
+                                option(value= state.abbreviation ) #{state.name}
                         br
                         br
                         #map2(style='height: 400px; width: 500px')
 
+
         div(align='center')
-            input(type='submit',value='Compare')
+            b Bird Species:
+            select(id="B", name="bird_Species", onchange='AddBirdsToBothMaps()')
+                each eBird in taxa_eBird
+                    option(value= eBird.scientific_name ) #{eBird.common_name}
+            br
+            br
         div(align='center')
             table
                 tr
