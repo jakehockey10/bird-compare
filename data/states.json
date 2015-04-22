@@ -1,238 +1,332 @@
 [
     {
         "name": "Alabama",
-        "abbreviation": "AL"
+        "abbreviation": "AL",
+        "lat":"32.7990",
+        "lng":"-86.8073"
     },
     {
         "name": "Alaska",
-        "abbreviation": "AK"
+        "abbreviation": "AK",
+        "lat":"61.3850",
+        "lng":"-152.2683"
     },
     {
         "name": "American Samoa",
-        "abbreviation": "AS"
+        "abbreviation": "AS",
+        "lat":"14.2417",
+        "lng":"-170.7197"
     },
     {
         "name": "Arizona",
-        "abbreviation": "AZ"
+        "abbreviation": "AZ",
+        "lat":"33.7712",
+        "lng":"-111.3877"
     },
     {
         "name": "Arkansas",
-        "abbreviation": "AR"
+        "abbreviation": "AR",
+        "lat":"34.9513",
+        "lng":"-92.3809"
     },
     {
         "name": "California",
-        "abbreviation": "CA"
+        "abbreviation": "CA",
+        "lat":"36.1700",
+        "lng":"-119.7462"
     },
     {
         "name": "Colorado",
-        "abbreviation": "CO"
+        "abbreviation": "CO",
+        "lat":"39.0646",
+        "lng":"-105.3272"
     },
     {
         "name": "Connecticut",
-        "abbreviation": "CT"
+        "abbreviation": "CT",
+        "lat":"41.5834",
+        "lng":"-72.7622"
     },
     {
         "name": "Delaware",
-        "abbreviation": "DE"
+        "abbreviation": "DE",
+        "lat":"39.3498",
+        "lng":"-75.5148"
     },
     {
         "name": "District Of Columbia",
-        "abbreviation": "DC"
-    },
-    {
-        "name": "Federated States Of Micronesia",
-        "abbreviation": "FM"
+        "abbreviation": "DC",
+        "lat":"38.8964",
+        "lng":"-77.0262"
     },
     {
         "name": "Florida",
-        "abbreviation": "FL"
+        "abbreviation": "FL",
+        "lat":"27.8333",
+        "lng":"-81.7170"
     },
     {
         "name": "Georgia",
-        "abbreviation": "GA"
-    },
-    {
-        "name": "Guam",
-        "abbreviation": "GU"
+        "abbreviation": "GA",
+        "lat":"32.9866",
+        "lng":"-83.6487"
     },
     {
         "name": "Hawaii",
-        "abbreviation": "HI"
+        "abbreviation": "HI",
+        "lat":"21.1098",
+        "lng":"-157.5311"
     },
     {
         "name": "Idaho",
-        "abbreviation": "ID"
+        "abbreviation": "ID",
+        "lat":"44.2394",
+        "lng":"-114.5103"
     },
     {
         "name": "Illinois",
-        "abbreviation": "IL"
+        "abbreviation": "IL",
+        "lat":"40.3363",
+        "lng":"-89.0022"
     },
     {
         "name": "Indiana",
-        "abbreviation": "IN"
+        "abbreviation": "IN",
+        "lat":"39.8647",
+        "lng":"-86.2604"
     },
     {
         "name": "Iowa",
-        "abbreviation": "IA"
+        "abbreviation": "IA",
+        "lat":"42.0046",
+        "lng":"-93.2140"
     },
     {
         "name": "Kansas",
-        "abbreviation": "KS"
+        "abbreviation": "KS",
+        "lat":"38.5111",
+        "lng":"-96.8005"
     },
     {
         "name": "Kentucky",
-        "abbreviation": "KY"
+        "abbreviation": "KY",
+        "lat":"37.6690",
+        "lng":"-84.6514"
     },
     {
         "name": "Louisiana",
-        "abbreviation": "LA"
+        "abbreviation": "LA",
+        "lat":"31.1801",
+        "lng":"-91.8749"
     },
     {
         "name": "Maine",
-        "abbreviation": "ME"
-    },
-    {
-        "name": "Marshall Islands",
-        "abbreviation": "MH"
+        "abbreviation": "ME",
+        "lat":"44.6074",
+        "lng":"-69.3977"
     },
     {
         "name": "Maryland",
-        "abbreviation": "MD"
+        "abbreviation": "MD",
+        "lat":"39.0724",
+        "lng":"-76.7902"
     },
     {
         "name": "Massachusetts",
-        "abbreviation": "MA"
+        "abbreviation": "MA",
+        "lat":"42.2373",
+        "lng":"-71.5314"
     },
     {
         "name": "Michigan",
-        "abbreviation": "MI"
+        "abbreviation": "MI",
+        "lat":"43.3504",
+        "lng":"-84.5603"
     },
     {
         "name": "Minnesota",
-        "abbreviation": "MN"
+        "abbreviation": "MN",
+        "lat":"45.7326",
+        "lng":"-93.9196"
     },
     {
         "name": "Mississippi",
-        "abbreviation": "MS"
+        "abbreviation": "MS",
+        "lat":"32.7673",
+        "lng":"-89.6812"
     },
     {
         "name": "Missouri",
-        "abbreviation": "MO"
+        "abbreviation": "MO",
+        "lat":"38.4623",
+        "lng":"-92.3020"
     },
     {
         "name": "Montana",
-        "abbreviation": "MT"
+        "abbreviation": "MT",
+        "lat":"46.9048",
+        "lng":"-110.3261"
     },
     {
         "name": "Nebraska",
-        "abbreviation": "NE"
+        "abbreviation": "NE",
+        "lat":"41.1289",
+        "lng":"-98.2883"
     },
     {
         "name": "Nevada",
-        "abbreviation": "NV"
+        "abbreviation": "NV",
+        "lat":"38.4199",
+        "lng":"-117.1219"
     },
     {
         "name": "New Hampshire",
-        "abbreviation": "NH"
+        "abbreviation": "NH",
+        "lat":"43.4108",
+        "lng":"-71.5653"
     },
     {
         "name": "New Jersey",
-        "abbreviation": "NJ"
+        "abbreviation": "NJ",
+        "lat":"40.3140",
+        "lng":"-74.5089"
     },
     {
         "name": "New Mexico",
-        "abbreviation": "NM"
+        "abbreviation": "NM",
+        "lat":"34.8375",
+        "lng":"-106.2371"
     },
     {
         "name": "New York",
-        "abbreviation": "NY"
+        "abbreviation": "NY",
+        "lat":"42.1497",
+        "lng":"-74.9384"
     },
     {
         "name": "North Carolina",
-        "abbreviation": "NC"
+        "abbreviation": "NC",
+        "lat":"35.6411",
+        "lng":"-79.8431"
     },
     {
         "name": "North Dakota",
-        "abbreviation": "ND"
+        "abbreviation": "ND",
+        "lat":"47.5362",
+        "lng":"-99.7930"
     },
     {
         "name": "Northern Mariana Islands",
-        "abbreviation": "MP"
+        "abbreviation": "MP",
+        "lat":"14.8058",
+        "lng":"145.5505"
     },
     {
         "name": "Ohio",
-        "abbreviation": "OH"
+        "abbreviation": "OH",
+        "lat":"40.3736",
+        "lng":"-82.7755"
     },
     {
         "name": "Oklahoma",
-        "abbreviation": "OK"
+        "abbreviation": "OK",
+        "lat":"35.5376",
+        "lng":"-96.9247"
     },
     {
         "name": "Oregon",
-        "abbreviation": "OR"
-    },
-    {
-        "name": "Palau",
-        "abbreviation": "PW"
+        "abbreviation": "OR",
+        "lat":"44.5672",
+        "lng":"-122.1269"
     },
     {
         "name": "Pennsylvania",
-        "abbreviation": "PA"
+        "abbreviation": "PA",
+        "lat":"40.5773",
+        "lng":"-77.2640"
     },
     {
         "name": "Puerto Rico",
-        "abbreviation": "PR"
+        "abbreviation": "PR",
+        "lat":"18.2766",
+        "lng":"-66.3350"
     },
     {
         "name": "Rhode Island",
-        "abbreviation": "RI"
+        "abbreviation": "RI",
+        "lat":"41.6772",
+        "lng":"-71.5101"
     },
     {
         "name": "South Carolina",
-        "abbreviation": "SC"
+        "abbreviation": "SC",
+        "lat":"33.8191",
+        "lng":"-80.9066"
     },
     {
         "name": "South Dakota",
-        "abbreviation": "SD"
+        "abbreviation": "SD",
+        "lat":"44.2853",
+        "lng":"-99.4632"
     },
     {
         "name": "Tennessee",
-        "abbreviation": "TN"
+        "abbreviation": "TN",
+        "lat":"35.7449",
+        "lng":"-86.7489"
     },
     {
         "name": "Texas",
-        "abbreviation": "TX"
+        "abbreviation": "TX",
+        "lat":"31.1060",
+        "lng":"-97.6475"
     },
     {
         "name": "Utah",
-        "abbreviation": "UT"
+        "abbreviation": "UT",
+        "lat":"40.1135",
+        "lng":"-111.8535"
     },
     {
         "name": "Vermont",
-        "abbreviation": "VT"
+        "abbreviation": "VT",
+        "lat":"44.0407",
+        "lng":"-72.7093"
     },
     {
         "name": "Virgin Islands",
-        "abbreviation": "VI"
+        "abbreviation": "VI",
+        "lat":"18.0001",
+        "lng":"-64.8199"
     },
     {
         "name": "Virginia",
-        "abbreviation": "VA"
+        "abbreviation": "VA",
+        "lat":"37.7680",
+        "lng":"-78.2057"
     },
     {
         "name": "Washington",
-        "abbreviation": "WA"
+        "abbreviation": "WA",
+        "lat":"47.3917",
+        "lng":"-121.5708"
     },
     {
         "name": "West Virginia",
-        "abbreviation": "WV"
+        "abbreviation": "WV",
+        "lat":"38.4680",
+        "lng":"-80.9696"
     },
     {
         "name": "Wisconsin",
-        "abbreviation": "WI"
+        "abbreviation": "WI",
+        "lat":"44.2563",
+        "lng":"-89.6385"
     },
     {
         "name": "Wyoming",
-        "abbreviation": "WY"
+        "abbreviation": "WY",
+        "lat":"42.7475",
+        "lng":"-107.2085"
     }
 ]

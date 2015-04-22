@@ -27,7 +27,7 @@ html
                         b Region 1
                         select(id="R1", name="Region1", onchange='Map1.changeView(this)')
                             each state in states
-                                option(value = state.abbreviation, data-lat = state.location.lat, data-lng = state.location.lng) #{state.name}
+                                option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
                         br
                         br
                         #map1(style='height: 400px; width: 500px')
@@ -36,7 +36,7 @@ html
                         b Region 2
                         select(id="R2", name="Region2", onchange='Map2.changeView(this)')
                             each state in states
-                                option(value = state.abbreviation, data-lat = state.location.lat, data-lng = state.location.lng) #{state.name}
+                                option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
                         br
                         br
                         #map2(style='height: 400px; width: 500px')
