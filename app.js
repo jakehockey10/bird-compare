@@ -4,7 +4,6 @@ var app = express();
 
 var birds = require('./routes/birds');
 var states = require('./data/states.json');
-var statesJeo = require('./data/statesJeo.json');
 var species = require('./data/taxa_eBird.json');
 
 app.use(express.static(__dirname + '/public'));
