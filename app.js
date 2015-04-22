@@ -4,12 +4,27 @@ var app = express();
 
 var birds = require('./routes/birds');
 var states = require('./data/states.json');
-var statesJeo = require('./data/statesJeo.json');
 var species = require('./data/taxa_eBird.json');
 
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'jade');
+
+// This function to sort the 
+function sortByProperty(property) {
+    'use strict';
+    return function (a, b) {
+        var sortStatus = 0;
+        if (a[property] < b[property]) {
+            sortStatus = -1;
+        } else if (a[property] > b[property]) {
+            sortStatus = 1;
+        }
+ 
+        return sortStatus;
+    };
+}
+species.sort(sortByProperty('scientific_name'));
 
 app.get('/', function (req, res) {
     res.render('index.jade', {states: states, species: species})
