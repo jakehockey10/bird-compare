@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'jade');
 
-// This function to sort the 
+// This function to sort the species list based on the scientific_name 
 function sortByProperty(property) {
     'use strict';
     return function (a, b) {
