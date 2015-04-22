@@ -113,6 +113,14 @@ var Map = function (map) {
                 fitBoundsOfMapToMarkerGroupBounds();
             })
         },
+
+        addRecentObservationsOfASpeciesInARegion: function (locations) {
+            $.get('/views/locationMarker.jade', function (template) {
+                constructMarkersForEBirdResults(locations, template);
+            }).success(function () {
+                fitBoundsOfMapToMarkerGroupBounds();
+            })
+        },
         /**
          * Adds a marker at the location of latLng.  Also binds a popup to it, but it is a silly little popup.
          * This method should change before being heavily used.
@@ -305,6 +313,32 @@ function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
     })
 }
 
+function findRecentObservationsOfASpeciesInARegionForMap(map) {
+    var parameters = {
+        lat: map.center.lat,
+        lng: map.center.lng
+    };
+
+    $.get('/birds/data/obs/region_spp/recent', parameters, function (data) {
+        var response = JSON.parse(data.body);
+        if (data.err) {
+            $('#response').html(JSON.stringify(data.err));
+        } else if (response[0].errorCode) {
+            $('#response').html(JSON.stringify(response[0].errorMsg));
+        } else if (data.template) {
+            $('#response').html(data.template);
+        } else if (data.body) {
+            $.get('/views/locationResponse.jade', function (template) {
+                var html = jade.render(template, {items: response});
+                $('#response').html(html);
+
+                map.addRecentObservationsOfASpeciesInARegion(response);
+            });
+        } else {
+            $('#response').html('something went wrong.');
+        }
+    })
+}
 /**
  * Set the click listener for the "Recent Nearby Observations" button.
  */
@@ -324,9 +358,19 @@ function setNearestLocationsWithObservationsOfASpeciesClickListener() {
 }
 
 /**
+ * Set the click listener for the "Recent Observations Of A Species In A Region" button.
+ */
+function setRecentObservationsOfASpeciesInARegionClickListener() {
+    $('#recent_Observations_OfASpecies_InARegion').on('click', function () {
+        [Map1, Map2].forEach(function (map) {findRecentObservationsOfASpeciesInARegionForMap(map)});
+    })
+}
+
+/**
  * When the DOM is ready...
  */
 $(document).ready(function() {
     setRecentNearbyObservationsClickListener();
     setNearestLocationsWithObservationsOfASpeciesClickListener();
+    setRecentObservationsOfASpeciesInARegionClickListener();
 });
