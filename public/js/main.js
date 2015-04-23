@@ -246,8 +246,8 @@ function setThenGetDOMMapView(id, center, zoom) {
  * when the request comes back successfully.
  * @type {*}
  */
-var Map1 = new Map(setThenGetDOMMapView('map1', [51.505, -0.09], 13));
-var Map2 = new Map(setThenGetDOMMapView('map2', [32.7990, -86.8073], 7));
+var Map1 = new Map(setThenGetDOMMapView('map1', [39.91, -77.02], 3));
+var Map2 = new Map(setThenGetDOMMapView('map2', [39.91, -77.02], 3));
 
 /**
  * This method finds the recent nearby observations for the map passed in.  This
@@ -288,7 +288,8 @@ function findRecentNearbyObservationsForMap(map) {
 function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
     var parameters = {
         lat: map.center.lat,
-        lng: map.center.lng
+        lng: map.center.lng,
+        sci: map.species
     };
 
     $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
