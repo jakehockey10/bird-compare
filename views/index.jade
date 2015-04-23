@@ -19,26 +19,49 @@ html
             hr
             h1 US eBird-compare
             hr
-
         div(align='center')
+            b Compare two: 
+            select(id="c", name="compare", onchange='compare(this)')
+                option(value = 'R') States
+                option(value = 'S') Spots
+            hr
+            
+
+        div(id='m2', align='center', style='disply: block')
+            b Radius: 
+            select(id="r", name="Radius", onchange='changeRadius(option:selected)')
+                option(value = '10') 10 km
+                option(value = '20') 20 km
+                option(value = '30') 30 km
+                option(value = '40') 40 km
+                option(value = '50') 50 km
+            br
+
+        div(id='m1', align='center')
             table
                 tr
                     td
-                        b Region 1
+                        b Region 1: 
                         select(id="R1", name="Region1", onchange='Map1.changeView(this)')
                             each state in states
                                 option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
                         br
                         br
-                        #map1(style='height: 400px; width: 500px')
 
                     td
-                        b Region 2
+                        b Region 2: 
                         select(id="R2", name="Region2", onchange='Map2.changeView(this)')
                             each state in states
                                 option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
                         br
                         br
+
+        div(align='center')
+            table
+                tr
+                    td
+                        #map1(style='height: 400px; width: 500px')
+                    td
                         #map2(style='height: 400px; width: 500px')
 
         div(align='center')

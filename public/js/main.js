@@ -91,6 +91,7 @@ var Map = function (map) {
          * center will hold the current center of the map view.
          */
         center: {},
+        circle: {},
         /**
          * Render the observations that comes from the "Recent Nearby Observations" endpoint of the eBird API.
          * @param observations
@@ -143,18 +144,28 @@ var Map = function (map) {
          * @param fillOpacity
          */
         addCircle: function (latLng, radius, color, fillColor, fillOpacity) {
-            latLng = latLng || [51.508, -0.11];
-            radius = radius || 500;
-            color = color || 'red';
-            fillColor = fillColor || '#f03';
-            fillOpacity = fillOpacity || 0.5;
-            var circle = L.circle(latLng, radius, {
-                color: color,
-                fillColor: fillColor,
-                fillOpacity: fillOpacity
-            }).addTo(this.map);
-            // TODO: make the binding of a popup more dynamic (i.e. opt-in/opt-out, customize message, etc.)
-            circle.bindPopup("I am a circle.");
+            var mapCircle = this.circle;
+            this.map.off('click');
+
+
+            function onMapClick(e) {
+                latLng = e.latlng;
+                radius = radius || 500;
+                color = color || 'red';
+                fillColor = fillColor || '#f03';
+                fillOpacity = fillOpacity || 0.5;
+                var circle = L.circle(latLng, radius, {
+                    color: color,
+                    fillColor: fillColor,
+                    fillOpacity: fillOpacity
+                }).addTo(map);
+                // TODO: make the binding of a popup more dynamic (i.e. opt-in/opt-out, customize message, etc.)
+                circle.bindPopup("You clicked the map at " + e.latlng.toString())
+                mapCircle=circle;
+            }
+
+            this.map.on('click', onMapClick);
+            
         },
         /**
          * Adds a polygon with vertices set by latLngs.  Also binds a popup to it, but it is a silly little popup.
@@ -202,6 +213,12 @@ var Map = function (map) {
             var lng = option.data('lng');
             this.map.setView(new L.LatLng(lat, lng), 6);
             this.center = {lat: lat, lng: lng};
+        },
+
+        
+
+        changeRadius: function (r) {
+            raduis = r;
         }
     };
 };
@@ -213,6 +230,8 @@ var Map = function (map) {
  * @param zoom
  * @returns {*}
  */
+
+
 function setThenGetDOMMapView(id, center, zoom) {
     // TODO: Find better defaults
     zoom = zoom || 13;
@@ -246,9 +265,10 @@ var Map2 = new Map(setThenGetDOMMapView('map2', [32.7990, -86.8073], 7));
  */
 Map1.addMarker();
 Map1.addCircle();
+Map2.addCircle();
 Map1.addPolygon();
 Map1.addPopup();
-Map2.addPopupWithClickListener();
+//Map2.addPopupWithClickListener();
 
 /**
  * This method finds the recent nearby observations for the map passed in.  This
@@ -366,6 +386,21 @@ function setRecentObservationsOfASpeciesInARegionClickListener() {
     })
 }
 
+function compare(select) {
+    var m1 = $("#m1");
+    var m2 = $("#m2");
+    var option = $('#' + select.id + ' option:selected');
+    if (option.attr('value')=='R')
+    {  
+        m1.show();
+        m2.hide();
+    }
+    else
+    {
+        m1.hide();
+        m2.show();
+    }
+}
 /**
  * When the DOM is ready...
  */
