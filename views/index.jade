@@ -27,7 +27,7 @@ html
                         b Region 1
                         select(id="R1", name="Region1", onchange='Map1.changeView(this)')
                             each state in states
-                                option(value = state.abbreviation, data-lat = state.location.lat, data-lng = state.location.lng) #{state.name}
+                                option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
                         br
                         br
                         #map1(style='height: 400px; width: 500px')
@@ -36,7 +36,7 @@ html
                         b Region 2
                         select(id="R2", name="Region2", onchange='Map2.changeView(this)')
                             each state in states
-                                option(value = state.abbreviation, data-lat = state.location.lat, data-lng = state.location.lng) #{state.name}
+                                option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
                         br
                         br
                         #map2(style='height: 400px; width: 500px')
@@ -45,7 +45,7 @@ html
             b Species Name:
             select(id="B", name="bird_Species", onchange='AddBirdsToBothMaps()')
                 each sp , i in species
-                    option(value=i) #{sp.common_name}
+                    option(value=i) #{sp.scientific_name}
             br
             br
 
@@ -61,6 +61,7 @@ html
 
         button#recent_nearby_observations Return recent nearby observations
         button#nearest_locations_of_species Return nearest locations with observations of a species
+        button#recent_Observations_OfASpecies_InARegion Return Recent Observations Of A Species In A Region
 
         #response
 

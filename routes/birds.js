@@ -22,6 +22,7 @@ var router = express.Router();
 const eBirdDataServices = 'http://ebird.org/ws1.1/data';
 const recentNearbyObservations = '/obs/geo/recent?';
 const recentNearbyObservationsOfASpecies = '/nearest/geo_spp/recent?';
+const recentObservationsOfASpeciesInARegion = '/obs/region_spp/recent?';
 const format = '&fmt=json';
 
 /**
@@ -65,6 +66,14 @@ router.get('/data/obs/geo/recent', function(req, res, next) {
  */
 router.get('/data/nearest/geo_spp/recent', function(req, res, next) {
     var url = constructURL(eBirdDataServices, recentNearbyObservationsOfASpecies, req.query, format);
+    makeRequestToEBirdAPI(url, res);
+});
+
+/**
+ * Express route for "Recent Observations Of A Species In A Region" endpoint of the eBird API.
+ */
+router.get('/data/obs/region_spp/recent', function(req, res, next) {
+    var url = constructURL(eBirdDataServices, recentObservationsOfASpeciesInARegion, req.query, format);
     makeRequestToEBirdAPI(url, res);
 });
 
