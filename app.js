@@ -24,7 +24,7 @@ function sortByProperty(property) {
         return sortStatus;
     };
 }
-species.sort(sortByProperty('scientific_name'));
+species.sort(sortByProperty('common_name'));
 
 app.get('/', function (req, res) {
     res.render('index.jade', {states: states, species: species})

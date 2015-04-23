@@ -93,6 +93,14 @@ var Map = function (map) {
         center: {},
         circle: {},
         /**
+         * region will hold abbreviations for selected region that eBird API region-type endpoints expect.
+         */
+        region: '',
+        /**
+         * species will hold the chosen species to pass into eBird API endpoints that require a particular species.
+         */
+        species: '',
+        /**
          * Render the observations that comes from the "Recent Nearby Observations" endpoint of the eBird API.
          * @param observations
          */
@@ -108,7 +116,7 @@ var Map = function (map) {
          * @param locations
          */
         addNearestLocationsWithObservationsOfASpecies: function (locations) {
-            $.get('/views/locationMarker.jade', function (template) {
+            $.get('/views/observationMarker.jade', function (template) {
                 constructMarkersForEBirdResults(locations, template);
             }).success(function () {
                 fitBoundsOfMapToMarkerGroupBounds();
@@ -116,7 +124,7 @@ var Map = function (map) {
         },
 
         addRecentObservationsOfASpeciesInARegion: function (locations) {
-            $.get('/views/locationMarker.jade', function (template) {
+            $.get('/views/observationMarker.jade', function (template) {
                 constructMarkersForEBirdResults(locations, template);
             }).success(function () {
                 fitBoundsOfMapToMarkerGroupBounds();
@@ -211,14 +219,10 @@ var Map = function (map) {
             var option = $('#' + select.id + ' option:selected');
             var lat = option.data('lat');
             var lng = option.data('lng');
+            var region = option.attr('value');
             this.map.setView(new L.LatLng(lat, lng), 6);
             this.center = {lat: lat, lng: lng};
-        },
-
-        
-
-        changeRadius: function (r) {
-            raduis = r;
+            this.region = region;
         }
     };
 };
@@ -247,7 +251,6 @@ function setThenGetDOMMapView(id, center, zoom) {
     return map;
 }
 
-
 // TODO: We need to figure out what we want the maps to default to...
 /**
  * Create Map objects that point to the DOM element maps via the map property (i.e. Map1.map)
@@ -256,19 +259,16 @@ function setThenGetDOMMapView(id, center, zoom) {
  * when the request comes back successfully.
  * @type {*}
  */
-var Map1 = new Map(setThenGetDOMMapView('map1', [51.505, -0.09], 13));
-var Map2 = new Map(setThenGetDOMMapView('map2', [32.7990, -86.8073], 7));
 
-// TODO: When do you guys want to get rid of these?
-/**
- * Keep the examples that were in map1.js and map2.js from before, for now.
- */
+var Map1 = new Map(setThenGetDOMMapView('map1', [39.91, -77.02], 3));
+var Map2 = new Map(setThenGetDOMMapView('map2', [39.91, -77.02], 3));
+
 Map1.addMarker();
 Map1.addCircle();
 Map2.addCircle();
 Map1.addPolygon();
 Map1.addPopup();
-//Map2.addPopupWithClickListener();
+
 
 /**
  * This method finds the recent nearby observations for the map passed in.  This
@@ -309,7 +309,8 @@ function findRecentNearbyObservationsForMap(map) {
 function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
     var parameters = {
         lat: map.center.lat,
-        lng: map.center.lng
+        lng: map.center.lng,
+        sci: map.species
     };
 
     $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
@@ -321,7 +322,7 @@ function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
         } else if (data.template) {
             $('#response').html(data.template);
         } else if (data.body) {
-            $.get('/views/locationResponse.jade', function (template) {
+            $.get('/views/observationResponse.jade', function (template) {
                 var html = jade.render(template, {items: response});
                 $('#response').html(html);
 
@@ -335,8 +336,9 @@ function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
 
 function findRecentObservationsOfASpeciesInARegionForMap(map) {
     var parameters = {
-        lat: map.center.lat,
-        lng: map.center.lng
+        rtype: 'subnational1',
+        r: map.region,
+        sci: map.species
     };
 
     $.get('/birds/data/obs/region_spp/recent', parameters, function (data) {
@@ -348,7 +350,7 @@ function findRecentObservationsOfASpeciesInARegionForMap(map) {
         } else if (data.template) {
             $('#response').html(data.template);
         } else if (data.body) {
-            $.get('/views/locationResponse.jade', function (template) {
+            $.get('/views/observationResponse.jade', function (template) {
                 var html = jade.render(template, {items: response});
                 $('#response').html(html);
 
@@ -359,6 +361,7 @@ function findRecentObservationsOfASpeciesInARegionForMap(map) {
         }
     })
 }
+
 /**
  * Set the click listener for the "Recent Nearby Observations" button.
  */
@@ -401,6 +404,14 @@ function compare(select) {
         m2.show();
     }
 }
+
+function SetSpeciesForBothMaps(select) {
+    var option = $('#' + select.id + ' option:selected');
+    [Map1, Map2].forEach(function (map) {
+        map.species = option.attr('value');
+    });
+}
+
 /**
  * When the DOM is ready...
  */

@@ -66,9 +66,10 @@ html
 
         div(align='center')
             b Species Name:
-            select(id="B", name="bird_Species", onchange='AddBirdsToBothMaps()')
-                each sp , i in species
-                    option(value=i) #{sp.scientific_name}
+            select(id="B", name="bird_Species", onchange='SetSpeciesForBothMaps(this)')
+                option(value="") "Choose a species"
+                each sp in species
+                    option(value=sp.scientific_name) #{sp.common_name}
             br
             br
 
