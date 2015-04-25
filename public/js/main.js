@@ -15,34 +15,13 @@ var Comparison = function (left, right) {
     var leftTotalString = leftTotal + ' observations';
     var rightTotalString = rightTotal + ' observations';
     return {
-        /**
-         * Total
-         */
         total: total,
-        /**
-         * Left side result
-         */
         left: {
-            /**
-             * Total of left results
-             */
             total: leftTotal,
-            /**
-             * total of left results (readable)
-             */
             totalString: leftTotalString
         },
-        /**
-         * Right side result
-         */
         right: {
-            /**
-             * Total of right results
-             */
             total: rightTotal,
-            /**
-             * total of right results (readable)
-             */
             totalString: rightTotalString
         }
     };

@@ -6,8 +6,9 @@
             each item in items
                 .media
                     .media-left
-                        a(href='#')
-                            img.media-object(src='...', alt='...')
+                        - var search = item.sciName.replace(' ', '+');
+                        a(href='https://www.google.com/search?q=' + search + '&tbm=isch', target='_blank')
+                            img.media-object(src='images/camera-retro.png', alt='...')
                     .media-body
                         h4.media-heading.text-center
                             span.badge= item.howMany

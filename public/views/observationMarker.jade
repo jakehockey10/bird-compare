@@ -1,5 +1,7 @@
 .thumbnail
-    img(src='...', alt='...')
+    - var search = observation.sciName.replace(' ', '+');
+    a(href='https://www.google.com/search?q=' + search + '&tbm=isch', target='_blank')
+        img(src='images/camera-retro100.png', alt='...')
     .caption
         h4
             span.badge.pull-right= observation.howMany
