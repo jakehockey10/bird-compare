@@ -2,7 +2,9 @@
 
 table.table.table-striped.table-hover
     tbody
-        tr
+        tr(class="#{result.totalClass}")
             td Total
             td= result.totalString
+            td
+                i(class="#{result.totalIcon}")
 

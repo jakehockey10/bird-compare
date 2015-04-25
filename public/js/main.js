@@ -14,15 +14,24 @@ var Comparison = function (left, right) {
     var total = leftTotal + rightTotal;
     var leftTotalString = leftTotal + ' observations';
     var rightTotalString = rightTotal + ' observations';
+    var leftTotalIsBigger = leftTotal > rightTotal;
+    var leftTotalClass = leftTotalIsBigger ? 'success' : 'danger';
+    var rightTotalClass = leftTotalIsBigger ? 'danger' : 'success';
+    var leftTotalIcon = leftTotalIsBigger ? 'fa fa-arrow-up' : 'fa fa-arrow-down';
+    var rightTotalIcon = leftTotalIsBigger ? 'fa fa-arrow-down' : 'fa fa-arrow-up';
     return {
         total: total,
         left: {
             total: leftTotal,
-            totalString: leftTotalString
+            totalString: leftTotalString,
+            totalClass: leftTotalClass,
+            totalIcon: leftTotalIcon
         },
         right: {
             total: rightTotal,
-            totalString: rightTotalString
+            totalString: rightTotalString,
+            totalClass: rightTotalClass,
+            totalIcon: rightTotalIcon
         }
     };
 };
