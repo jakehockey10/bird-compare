@@ -8,8 +8,18 @@
     "jade": "^1.9.1",
     "leaflet": "^0.7.3",
     "lodash": "^3.7.0",
+    "mocha": "^2.2.4",
     "nodemw": "^0.5.0",
     "qs": "^2.4.1",
-    "request": "^2.55.0"
+    "request": "^2.55.0",
+    "should": "^6.0.1",
+    "supervisor": "^0.6.0"
+  },
+  "scripts": {
+    "autotest": "./node_modules/.bin/supervisor -q -n exit -x ./node_modules/.bin/mocha -- -b"
+  },
+  "devDependencies": {
+    "mocha": "~1.10.0",
+    "supervisor": "~0.5.2"
   }
 }

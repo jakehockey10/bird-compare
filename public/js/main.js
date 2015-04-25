@@ -2,13 +2,80 @@
  * Created by jake on 4/8/15.
  */
 
+
+
+
+/**
+ * Comparison Class to change the results of eBird endpoint results
+ */
+var Comparison = function (left, right) {
+    var leftTotal = left.length;
+    var rightTotal = right.length;
+    var total = leftTotal + rightTotal;
+    var leftTotalString = leftTotal + ' observations';
+    var rightTotalString = rightTotal + ' observations';
+    return {
+        /**
+         * Total
+         */
+        total: total,
+        /**
+         * Left side result
+         */
+        left: {
+            /**
+             * Total of left results
+             */
+            total: leftTotal,
+            /**
+             * total of left results (readable)
+             */
+            totalString: leftTotalString
+        },
+        /**
+         * Right side result
+         */
+        right: {
+            /**
+             * Total of right results
+             */
+            total: rightTotal,
+            /**
+             * total of right results (readable)
+             */
+            totalString: rightTotalString
+        }
+    };
+};
+
+
+
+
+/**
+ * Results to change
+ */
+var Results = function (results) {
+    return {
+        /**
+         * Array of results from the eBird endpoint calls
+         */
+        array: []
+    };
+};
+
+
+
+
+
+
+
+
 /**
  * Map class to accept results from eBird API calls and display on the DOM element maps
  * @param map
  * @returns {{map: *, addRecentNearbyObservationsAsMarkers: Function, addMarker: Function, addCircle: Function, addPolygon: Function, addPopup: Function, addPopupWithClickListener: Function}}
  * @constructor
  */
-
 var Map = function (map) {
     /**
      * A little description of what this is:
@@ -101,6 +168,16 @@ var Map = function (map) {
          */
         species: '',
         /**
+         * Results from the eBird API call
+         */
+        results: [],
+        /**
+         * addResults adds the eBird API call response to the results property
+         */
+        addResults: function (results) {
+            this.results = results;
+        },
+        /**
          * Render the observations that comes from the "Recent Nearby Observations" endpoint of the eBird API.
          * @param observations
          */
@@ -152,9 +229,7 @@ var Map = function (map) {
          * @param fillOpacity
          */
         addCircle: function (latLng, radius, color, fillColor, fillOpacity) {
-            var mapCircle = this.circle;
-            this.map.off('click');
-
+            this.map.off('click');  // clear any click handlers so that the one we add is the only one.
 
             function onMapClick(e) {
                 latLng = e.latlng;
@@ -168,12 +243,10 @@ var Map = function (map) {
                     fillOpacity: fillOpacity
                 }).addTo(map);
                 // TODO: make the binding of a popup more dynamic (i.e. opt-in/opt-out, customize message, etc.)
-                circle.bindPopup("You clicked the map at " + e.latlng.toString())
-                mapCircle=circle;
+                circle.bindPopup("You clicked the map at " + e.latlng.toString());
             }
 
             this.map.on('click', onMapClick);
-            
         },
         /**
          * Adds a polygon with vertices set by latLngs.  Also binds a popup to it, but it is a silly little popup.
@@ -234,8 +307,6 @@ var Map = function (map) {
  * @param zoom
  * @returns {*}
  */
-
-
 function setThenGetDOMMapView(id, center, zoom) {
     // TODO: Find better defaults
     zoom = zoom || 13;
@@ -259,16 +330,11 @@ function setThenGetDOMMapView(id, center, zoom) {
  * when the request comes back successfully.
  * @type {*}
  */
-
 var Map1 = new Map(setThenGetDOMMapView('map1', [39.91, -77.02], 3));
 var Map2 = new Map(setThenGetDOMMapView('map2', [39.91, -77.02], 3));
-
-Map1.addMarker();
+// TODO: Move the addCircleClickHandlers to the top of Map
 Map1.addCircle();
 Map2.addCircle();
-Map1.addPolygon();
-Map1.addPopup();
-
 
 /**
  * This method finds the recent nearby observations for the map passed in.  This
@@ -277,7 +343,7 @@ Map1.addPopup();
  * location parameter.
  * @param map
  */
-function findRecentNearbyObservationsForMap(map) {
+function findRecentNearbyObservationsForMap(map, callback) {
     var location = {
         lat: map.center.lat,
         lng: map.center.lng
@@ -294,7 +360,12 @@ function findRecentNearbyObservationsForMap(map) {
                 var html = jade.render(template, {items: response});
                 $('#response').html(html);
 
+                map.addResults(response);
                 map.addRecentNearbyObservationsAsMarkers(response);
+
+                if (typeof (callback) === 'function') {
+                    callback();
+                }
             });
         } else {
             $('#response').html('something went wrong.');
@@ -306,7 +377,7 @@ function findRecentNearbyObservationsForMap(map) {
  * This method finds the nearest locations with observations of a species for the map passed in.
  * This method was extracted (like the one above) to avoid code duplication.
  */
-function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
+function findNearestLocationsWithObservationsOfASpeciesForMap(map, callback) {
     var parameters = {
         lat: map.center.lat,
         lng: map.center.lng,
@@ -326,7 +397,12 @@ function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
                 var html = jade.render(template, {items: response});
                 $('#response').html(html);
 
+                map.addResults(response);
                 map.addNearestLocationsWithObservationsOfASpecies(response);
+
+                if (typeof (callback) === 'function') {
+                    callback();
+                }
             });
         } else {
             $('#response').html('something went wrong.');
@@ -334,7 +410,7 @@ function findNearestLocationsWithObservationsOfASpeciesForMap(map) {
     })
 }
 
-function findRecentObservationsOfASpeciesInARegionForMap(map) {
+function findRecentObservationsOfASpeciesInARegionForMap(map, callback) {
     var parameters = {
         rtype: 'subnational1',
         r: map.region,
@@ -354,7 +430,12 @@ function findRecentObservationsOfASpeciesInARegionForMap(map) {
                 var html = jade.render(template, {items: response});
                 $('#response').html(html);
 
+                map.addResults(response);
                 map.addRecentObservationsOfASpeciesInARegion(response);
+
+                if (typeof (callback) === 'function') {
+                    callback();
+                }
             });
         } else {
             $('#response').html('something went wrong.');
@@ -362,12 +443,33 @@ function findRecentObservationsOfASpeciesInARegionForMap(map) {
     })
 }
 
+function renderResultsComparison() {
+    var comparison = new Comparison(Map1.results, Map2.results);
+    $.get('/views/result.jade', function (template) {
+        var left = jade.render(template, {result: comparison.left});
+        var right = jade.render(template, {result: comparison.right});
+        $('#left').html(left);
+        $('#right').html(right);
+    });
+}
+
 /**
  * Set the click listener for the "Recent Nearby Observations" button.
  */
 function setRecentNearbyObservationsClickListener() {
     $('#recent_nearby_observations').on('click', function () {
-        [Map1, Map2].forEach(function (map) {findRecentNearbyObservationsForMap(map)});
+        async.parallel([
+            function (callback) { findRecentNearbyObservationsForMap(Map1, callback) },
+            function (callback) { findRecentNearbyObservationsForMap(Map2, callback) }
+        ], function () {
+            renderResultsComparison();
+        });
+        //async.each([Map1, Map2], findRecentNearbyObservationsForMap, function (err) {
+        //    renderResultsComparison();
+        //});
+        //[Map1, Map2].forEach(function (map) {
+        //    findRecentNearbyObservationsForMap(map)
+        //});
     })
 }
 
@@ -376,7 +478,16 @@ function setRecentNearbyObservationsClickListener() {
  */
 function setNearestLocationsWithObservationsOfASpeciesClickListener() {
     $('#nearest_locations_of_species').on('click', function () {
-        [Map1, Map2].forEach(function (map) {findNearestLocationsWithObservationsOfASpeciesForMap(map)});
+        async.parallel([
+            function (callback) { findNearestLocationsWithObservationsOfASpeciesForMap(Map1, callback) },
+            function (callback) { findNearestLocationsWithObservationsOfASpeciesForMap(Map2, callback) }
+        ], function () {
+            renderResultsComparison();
+        });
+        //async.each([Map1, Map2], findNearestLocationsWithObservationsOfASpeciesForMap, function (err) {
+        //    renderResultsComparison();
+        //});
+        //[Map1, Map2].forEach(function (map) {findNearestLocationsWithObservationsOfASpeciesForMap(map)});
     })
 }
 
@@ -385,11 +496,20 @@ function setNearestLocationsWithObservationsOfASpeciesClickListener() {
  */
 function setRecentObservationsOfASpeciesInARegionClickListener() {
     $('#recent_Observations_OfASpecies_InARegion').on('click', function () {
-        [Map1, Map2].forEach(function (map) {findRecentObservationsOfASpeciesInARegionForMap(map)});
+        async.parallel([
+            function (callback) { findRecentObservationsOfASpeciesInARegionForMap(Map1, callback) },
+            function (callback) { findRecentObservationsOfASpeciesInARegionForMap(Map2, callback) }
+        ], function () {
+            renderResultsComparison();
+        });
+        //async.each([Map1, Map2], findRecentObservationsOfASpeciesInARegionForMap, function (err) {
+        //    renderResultsComparison();
+        //});
+        //[Map1, Map2].forEach(function (map) {findRecentObservationsOfASpeciesInARegionForMap(map)});
     })
 }
 
-function compare(select) {
+function changeComparisonMode(select) {
     var m1 = $("#m1");
     var m2 = $("#m2");
     var option = $('#' + select.id + ' option:selected');

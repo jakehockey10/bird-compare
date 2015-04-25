@@ -15,13 +15,13 @@ html
             - var n = 0
             while n < 7
                 - n++
-                img(src="http://cdn.animals-pics.com/pictures/www.adflyer.co.uk/DynamicContent/Images/Birds.gif", width="150px")
+                img(src="images/Birds.gif", width="150px")
             hr
             h1 US eBird-compare
             hr
         div(align='center')
             b Compare two: 
-            select(id="c", name="compare", onchange='compare(this)')
+            select(id="c", name="changeComparisonMode", onchange='changeComparisonMode(this)')
                 option(value = 'R') States
                 option(value = 'S') Spots
             hr
@@ -77,10 +77,10 @@ html
             table
                 tr
                     td
-                        div.box
+                        div#left.box
                             b Birds no =
                     td
-                        div.box
+                        div#right.box
                             b Birds no =
 
         button#recent_nearby_observations Return recent nearby observations
@@ -91,3 +91,4 @@ html
 
     script(src="js/main.js")
     script(src="js/jade.js")
+    script(src="async/lib/async.js")

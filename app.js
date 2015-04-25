@@ -7,6 +7,7 @@ var states = require('./data/states.json');
 var species = require('./data/taxa_eBird.json');
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/bower_components'));
 
 app.set('view engine', 'jade');
 
