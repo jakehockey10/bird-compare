@@ -20,7 +20,7 @@ html
             hr
         div(align='center')
             b Compare two: 
-            select(id="c", name="changeComparisonMode", onchange='changeComparisonMode(this)')
+            select.form-control(id="c", name="changeComparisonMode", onchange='changeComparisonMode(this)', style='width: 100px;')
                 option(value = 'R') States
                 option(value = 'S') Spots
             hr
@@ -28,7 +28,7 @@ html
 
         #m2(align='center', style='disply: block')
             b Radius: 
-            select(id="r", name="Radius", onchange='changeRadius(option:selected)')
+            select.form-control(id="r", name="Radius", onchange='changeRadius(option:selected)', style='width: 100px;')
                 option(value = '10') 10 km
                 option(value = '20') 20 km
                 option(value = '30') 30 km
@@ -42,22 +42,17 @@ html
             table
                 tr
                     td
-                        b Region 1: 
-                        select(id="R1", name="Region1", onchange='Map1.changeView(this)')
+                        label Region 1:
+                        select.form-control(id="R1", name="Region1", onchange='Map1.changeView(this)')
                             option(value="") "Choose a state"
                             each state in states
                                 option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
-                        br
-                        br
-
                     td
-                        b Region 2: 
-                        select(id="R2", name="Region2", onchange='Map2.changeView(this)')
+                        label Region 2:
+                        select.form-control(id="R2", name="Region2", onchange='Map2.changeView(this)')
                             option(value="") "Choose a state"
                             each state in states
                                 option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
-                        br
-                        br
 
         div(align='center')
             table
@@ -68,13 +63,11 @@ html
                         #map2(style='height: 400px; width: 500px')
 
         div(align='center')
-            b Species Name:
-            select(id="B", name="bird_Species", onchange='SetSpeciesForBothMaps(this)')
+            label Species Name:
+            select.form-control(id="B", name="bird_Species", onchange='SetSpeciesForBothMaps(this)', style='width: 200px')
                 option(value="") "Choose a species"
                 each sp in species
                     option(value=sp.scientific_name) #{sp.common_name}
-            br
-            br
 
         div(align='center')
             table
@@ -82,9 +75,9 @@ html
                     td#left
                     td#right
 
-        button#recent_nearby_observations Return recent nearby observations
-        button#nearest_locations_of_species Return nearest locations with observations of a species
-        button#recent_Observations_OfASpecies_InARegion Return Recent Observations Of A Species In A Region
+        button.btn.btn-info#recent_nearby_observations Return recent nearby observations
+        button.btn.btn-info#nearest_locations_of_species Return nearest locations with observations of a species
+        button.btn.btn-info#recent_Observations_OfASpecies_InARegion Return Recent Observations Of A Species In A Region
 
         #response
 
