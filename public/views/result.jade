@@ -2,9 +2,30 @@
 
 table.table.table-striped.table-hover
     tbody
-        tr(class="#{result.totalClass}")
+        tr(class="#{result.total.class}")
             td Total
-            td= result.totalString
+            td= result.total.string
             td
-                i(class="#{result.totalIcon}")
+                i(class="#{result.total.icon}")
+        tr(class="#{result.species.class}")
+            td Number of species
+            td= result.species.amount
+            td
+                i(class="#{result.species.icon}")
+        tr(class="#{result.locations.amountClass}")
+            td Number of locations
+            td= result.locations.amount
+            td
+                i(class="#{result.locations.amountIcon}")
+        tr(class="#{result.locations.mostClass}")
+            td Location w/ most observations
+            td
+                - var name = result.locations.most[0].locName;
+                - var count = result.locations.most[0].howMany;
+                - var isPrivate = result.locations.most[0].locationPrivate;
+                - var privateString = isPrivate ? ' (private)' : '';
+                small "#{name + privateString}  "
+                    span.badge= count
+            td
+                i(class="#{result.locations.mostIcon}")
 
