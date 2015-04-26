@@ -14,17 +14,17 @@ html
             - var n = 0
             while n < 7
                 - n++
-                img(src="images/Birds.gif", width="150px")
+                img(src="images/Birds.gif", width="140px")
             hr
-            h1 US eBird-compare
+            h2 US eBird-compare
             hr
         div(align='center')
             b Compare two: 
             select(id="c", name="changeComparisonMode", onchange='changeComparisonMode(this)')
                 option(value = 'R') States
                 option(value = 'S') Spots
-            hr
-            
+            br
+            br
 
         #m2(align='center', style='disply: block')
             b Radius: 
@@ -34,9 +34,16 @@ html
                 option(value = '30') 30 km
                 option(value = '40') 40 km
                 option(value = '50') 50 km
+            br 
             br
 
-        #alerts(align='center')
+        div(align='center')
+            b Species Name:
+            select(id="B", name="bird_Species", onchange='SetSpeciesForBothMaps(this)')
+                option(value="") "Choose a species"
+                each sp in species
+                    option(value=sp.scientific_name) #{sp.common_name}
+            br
 
         #m1(align='center')
             table
@@ -48,7 +55,6 @@ html
                             each state in states
                                 option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
                         br
-                        br
 
                     td
                         b Region 2: 
@@ -56,35 +62,26 @@ html
                             option(value="") "Choose a state"
                             each state in states
                                 option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
-                        br
-                        br
+                        br 
+        div(align='center')
+            button#recent_nearby_observations Return recent nearby observations
+            button#nearest_locations_of_species Return nearest locations with observations of a species
+            button#recent_Observations_OfASpecies_InARegion Return Recent Observations Of A Species In A Region     
+        br
+
+        #alerts(align='center')
 
         div(align='center')
             table
                 tr
                     td
-                        #map1(style='height: 400px; width: 500px')
+                        #map1(style='height: 400px; width: 520px; border-style: solid')
                     td
-                        #map2(style='height: 400px; width: 500px')
-
-        div(align='center')
-            b Species Name:
-            select(id="B", name="bird_Species", onchange='SetSpeciesForBothMaps(this)')
-                option(value="") "Choose a species"
-                each sp in species
-                    option(value=sp.scientific_name) #{sp.common_name}
-            br
-            br
-
-        div(align='center')
-            table
-                tr
+                        #map2(style='height: 400px; width: 520px; border-style: solid')
+                tr 
                     td#left
                     td#right
-
-        button#recent_nearby_observations Return recent nearby observations
-        button#nearest_locations_of_species Return nearest locations with observations of a species
-        button#recent_Observations_OfASpecies_InARegion Return Recent Observations Of A Species In A Region
+            br             
 
         #response
 
