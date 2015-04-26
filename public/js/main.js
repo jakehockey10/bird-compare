@@ -38,6 +38,46 @@ var Map2 = new Map(setThenGetDOMMapView('map2', [39.91, -77.02], 3));
 Map1.addCircle();
 Map2.addCircle();
 
+function renderAlert(alertClass, alertStrong, alertMessage) {
+    var alert = {
+        class: alertClass, strong: alertStrong, message: alertMessage
+    };
+    $.get('/views/alert.jade', function (template) {
+        var html = jade.render(template, {alert: alert});
+        $('#alerts').html(html)
+    })
+}
+
+/**
+ * handleEBirdAPIResponse parses the response for errors and if it can't find any
+ * will attempt to render markers and comparison data based on the endpoint that
+ * was requested.
+ * @param data
+ * @param endpoint
+ */
+function handleEBirdAPIResponse (map, data, endpoint) {
+    var response = JSON.parse(data.body);
+    if (data.err) {
+        renderAlert('danger', 'Error', JSON.stringify(data.err));
+    } else if (response.length == 0) {
+        renderAlert('info', 'Heads up!', 'No results found');
+    } else if (data.template) {
+        $('#response').html(data.template);
+    } else if (data.body) {
+        map.addResults(response);
+        if (endpoint == 'recentNearbyObservations')
+            map.addRecentNearbyObservationsAsMarkers(response);
+        else if (endpoint == 'nearestLocationsWithObservationsOfASpecies')
+            map.addNearestLocationsWithObservationsOfASpecies(response);
+        else if (endpoint == 'recentObservationsOfASpeciesInARegion')
+            map.addRecentObservationsOfASpeciesInARegion(response);
+        else
+            renderAlert('warning', 'Uh oh...', 'Something went wrong.');
+    } else {
+        renderAlert('warning', 'Uh oh...', 'Something went wrong.');
+    }
+}
+
 /**
  * This method finds the recent nearby observations for the map passed in.  This
  * was made a method to avoid having to duplicate this code for Map1 and Map2.
@@ -53,27 +93,9 @@ function findRecentNearbyObservationsForMap(map, callback) {
     };
 
     $.get('/birds/data/obs/geo/recent', location, function (data) {
-        var response = JSON.parse(data.body);
-        if (data.err) {
-            $('#response').html(JSON.stringify(data.err));
-        } else if (response.length == 0) {
-            $('#response').html("No results found");
-        } else if (data.template) {
-            $('#response').html(data.template);
-        } else if (data.body) {
-            //$.get('/views/observationResponse.jade', function (template) {
-            //    var html = jade.render(template, {items: response});
-            //    $('#response').html(html);
-
-                map.addResults(response);
-                map.addRecentNearbyObservationsAsMarkers(response);
-
-                if (typeof (callback) === 'function') {
-                    callback();
-                }
-            //});
-        } else {
-            $('#response').html('something went wrong.');
+        handleEBirdAPIResponse(map, data, 'recentNearbyObservations');
+        if (typeof (callback) === 'function') {
+            callback();
         }
     })
 }
@@ -90,29 +112,9 @@ function findNearestLocationsWithObservationsOfASpeciesForMap(map, callback) {
     };
 
     $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
-        var response = JSON.parse(data.body);
-        if (data.err) {
-            $('#response').html(JSON.stringify(data.err));
-        } else if (response.length == 0) {
-            $('#response').html("No results found");
-        } else if (response[0].errorCode) {
-            $('#response').html(JSON.stringify(response[0].errorMsg));
-        } else if (data.template) {
-            $('#response').html(data.template);
-        } else if (data.body) {
-            //$.get('/views/observationResponse.jade', function (template) {
-            //    var html = jade.render(template, {items: response});
-            //    $('#response').html(html);
-
-                map.addResults(response);
-                map.addNearestLocationsWithObservationsOfASpecies(response);
-
-                if (typeof (callback) === 'function') {
-                    callback();
-                }
-            //});
-        } else {
-            $('#response').html('something went wrong.');
+        handleEBirdAPIResponse(map, data, 'nearestLocationsWithObservationsOfASpecies');
+        if (typeof (callback) === 'function') {
+            callback();
         }
     })
 }
@@ -125,29 +127,9 @@ function findRecentObservationsOfASpeciesInARegionForMap(map, callback) {
     };
 
     $.get('/birds/data/obs/region_spp/recent', parameters, function (data) {
-        var response = JSON.parse(data.body);
-        if (data.err) {
-            $('#response').html(JSON.stringify(data.err));
-        } else if (response.length == 0) {
-            $('#response').html("No results found");
-        } else if (response[0].errorCode) {
-            $('#response').html(JSON.stringify(response[0].errorMsg));
-        } else if (data.template) {
-            $('#response').html(data.template);
-        } else if (data.body) {
-            //$.get('/views/observationResponse.jade', function (template) {
-            //    var html = jade.render(template, {items: response});
-            //    $('#response').html(html);
-
-                map.addResults(response);
-                map.addRecentObservationsOfASpeciesInARegion(response);
-
-                if (typeof (callback) === 'function') {
-                    callback();
-                }
-            //});
-        } else {
-            $('#response').html('something went wrong.');
+        handleEBirdAPIResponse(map, data,'recentObservationsOfASpeciesInARegion');
+        if (typeof (callback) === 'function') {
+            callback();
         }
     })
 }
