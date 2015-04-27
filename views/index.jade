@@ -15,53 +15,45 @@ html
             - var n = 0
             while n < 7
                 - n++
-                img(src="images/Birds.gif", width="150px")
+                img(src="images/Birds.gif", width="140px")
             hr
-            h1 US eBird-compare
+            h2 US eBird-compare
             hr
+
         div(align='center')
-            b Compare two: 
-            select.form-control(id="c", name="changeComparisonMode", onchange='changeComparisonMode(this)', style='width: 100px;')
-                option(value = 'R') States
-                option(value = 'S') Spots
-            hr
-            
+            .form-group
+                label Compare two:
+                select.form-control(id="c", name="changeComparisonMode", onchange='changeComparisonMode(this)', style='width: 100px;')
+                    option(value = 'R') States
+                    option(value = 'S') Spots
 
         #m2(align='center', style='disply: block')
-            b Radius: 
-            select.form-control(id="r", name="Radius", onchange='changeRadius(option:selected)', style='width: 100px;')
-                option(value = '10') 10 km
-                option(value = '20') 20 km
-                option(value = '30') 30 km
-                option(value = '40') 40 km
-                option(value = '50') 50 km
-            br
-
-        #alerts(align='center')
+            .form-group
+                label Radius:
+                select.form-control(id="r", name="Radius", onchange='changeRadius(this)', style='width: 100px;')
+                    option(value = '10') 10 km
+                    option(value = '20') 20 km
+                    option(value = '30') 30 km
+                    option(value = '40') 40 km
+                    option(value = '50') 50 km
 
         #m1(align='center')
             table
                 tr
                     td
-                        label Region 1:
-                        select.form-control(id="R1", name="Region1", onchange='Map1.changeView(this)')
-                            option(value="") "Choose a state"
-                            each state in states
-                                option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
+                        .form-group
+                            label Region 1:
+                            select.form-control(id="R1", name="Region1", onchange='Map1.changeView(this)')
+                                option(value="") "Choose a state"
+                                each state in states
+                                    option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
                     td
-                        label Region 2:
-                        select.form-control(id="R2", name="Region2", onchange='Map2.changeView(this)')
-                            option(value="") "Choose a state"
-                            each state in states
-                                option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
-
-        div(align='center')
-            table
-                tr
-                    td
-                        #map1(style='height: 400px; width: 500px')
-                    td
-                        #map2(style='height: 400px; width: 500px')
+                        .form-group
+                            label Region 2:
+                            select.form-control(id="R2", name="Region2", onchange='Map2.changeView(this)')
+                                option(value="") "Choose a state"
+                                each state in states
+                                    option(value = state.abbreviation, data-lat = state.lat, data-lng = state.lng) #{state.name}
 
         //div(align='center')
         //    label Species Name:
@@ -70,15 +62,28 @@ html
         //        each sp in species
         //            option(value=sp.scientific_name) #{sp.common_name}
         div(align='center')
-            label Species Name:
-            input.form-control#speciesInput(style='width: 400px')
+            .form-group
+                label Species Name:
+                input.form-control#speciesInput(style='width: 400px')
+
+        div(align='center')
+            button.btn.btn-info#recent_nearby_observations Return recent nearby observations
+            button.btn.btn-info#nearest_locations_of_species Return nearest locations with observations of a species
+            button.btn.btn-info#recent_Observations_OfASpecies_InARegion Return Recent Observations Of A Species In A Region
+
+
+        #alerts(align='center')
 
         div(align='center')
             table
                 tr
+                    td
+                        #map1(style='height: 400px; width: 520px; border-style: solid')
+                    td
+                        #map2(style='height: 400px; width: 520px; border-style: solid')
+                tr
                     td#left
                     td#right
-
         button.btn.btn-info#recent_nearby_observations Return recent nearby observations
         button.btn.btn-info#nearest_locations_of_species Return nearest locations with observations of a species
         button.btn.btn-info#recent_Observations_OfASpecies_InARegion Return Recent Observations Of A Species In A Region
