@@ -1,0 +1,1514 @@
+[
+  {
+    "country_code":"AC",
+    "country_name":"Ashmore and Cartier Islands",
+    "country_name_long":"Ashmore and Cartier Islands",
+    "local_abbrev":"AC"
+  },
+  {
+    "country_code":"AD",
+    "country_name":"Andorra",
+    "country_name_long":"Principality of Andorra",
+    "local_abbrev":"AD"
+  },
+  {
+    "country_code":"AE",
+    "country_name":"United Arab Emirates",
+    "country_name_long":"United Arab Emirates",
+    "local_abbrev":"AE"
+  },
+  {
+    "country_code":"AF",
+    "country_name":"Afghanistan",
+    "country_name_long":"Islamic State of Afghanistan",
+    "local_abbrev":"AF"
+  },
+  {
+    "country_code":"AG",
+    "country_name":"Antigua and Barbuda",
+    "country_name_long":"Antigua and Barbuda",
+    "local_abbrev":"AG"
+  },
+  {
+    "country_code":"AI",
+    "country_name":"Anguilla",
+    "country_name_long":"Anguilla",
+    "local_abbrev":"AI"
+  },
+  {
+    "country_code":"AL",
+    "country_name":"Albania",
+    "country_name_long":"Republic of Albania",
+    "local_abbrev":"AL"
+  },
+  {
+    "country_code":"AM",
+    "country_name":"Armenia",
+    "country_name_long":"Republic of Armenia",
+    "local_abbrev":"AM"
+  },
+  {
+    "country_code":"AN",
+    "country_name":"Netherlands Antilles",
+    "country_name_long":"Netherlands Antilles",
+    "local_abbrev":"AN"
+  },
+  {
+    "country_code":"AO",
+    "country_name":"Angola",
+    "country_name_long":"Republic of Angola",
+    "local_abbrev":"AO"
+  },
+  {
+    "country_code":"AQ",
+    "country_name":"Antarctica",
+    "country_name_long":"Antarctica",
+    "local_abbrev":"AQ"
+  },
+  {
+    "country_code":"AR",
+    "country_name":"Argentina",
+    "country_name_long":"Argentine Republic",
+    "local_abbrev":"AR"
+  },
+  {
+    "country_code":"AS",
+    "country_name":"American Samoa",
+    "country_name_long":"American Samoa",
+    "local_abbrev":"AS"
+  },
+  {
+    "country_code":"AT",
+    "country_name":"Austria",
+    "country_name_long":"Republic of Austria",
+    "local_abbrev":"AT"
+  },
+  {
+    "country_code":"AU",
+    "country_name":"Australia",
+    "country_name_long":"Australia",
+    "local_abbrev":"AU"
+  },
+  {
+    "country_code":"AW",
+    "country_name":"Aruba",
+    "country_name_long":"Aruba",
+    "local_abbrev":"AW"
+  },
+  {
+    "country_code":"AX",
+    "country_name":"Åland Islands",
+    "country_name_long":"Åland Islands",
+    "local_abbrev":"AX"
+  },
+  {
+    "country_code":"AZ",
+    "country_name":"Azerbaijan",
+    "country_name_long":"Azerbaijani Republic",
+    "local_abbrev":"AZ"
+  },
+  {
+    "country_code":"BA",
+    "country_name":"Bosnia and Herzegovina",
+    "country_name_long":"Republic of Bosnia and Herzegovina",
+    "local_abbrev":"BA"
+  },
+  {
+    "country_code":"BB",
+    "country_name":"Barbados",
+    "country_name_long":"Barbados",
+    "local_abbrev":"BB"
+  },
+  {
+    "country_code":"BD",
+    "country_name":"Bangladesh",
+    "country_name_long":"People's Republic of Bangladesh",
+    "local_abbrev":"BD"
+  },
+  {
+    "country_code":"BE",
+    "country_name":"Belgium",
+    "country_name_long":"Kingdom of Belgium",
+    "local_abbrev":"BE"
+  },
+  {
+    "country_code":"BF",
+    "country_name":"Burkina Faso",
+    "country_name_long":"Burkina Faso",
+    "local_abbrev":"BF"
+  },
+  {
+    "country_code":"BG",
+    "country_name":"Bulgaria",
+    "country_name_long":"Republic of Bulgaria",
+    "local_abbrev":"BG"
+  },
+  {
+    "country_code":"BH",
+    "country_name":"Bahrain",
+    "country_name_long":"State of Bahrain",
+    "local_abbrev":"BH"
+  },
+  {
+    "country_code":"BI",
+    "country_name":"Burundi",
+    "country_name_long":"Republic of Burundi",
+    "local_abbrev":"BI"
+  },
+  {
+    "country_code":"BJ",
+    "country_name":"Benin",
+    "country_name_long":"Republic of Benin",
+    "local_abbrev":"BJ"
+  },
+  {
+    "country_code":"BL",
+    "country_name":"Saint Barthélemy",
+    "country_name_long":"Saint Barthélemy",
+    "local_abbrev":"BL"
+  },
+  {
+    "country_code":"BM",
+    "country_name":"Bermuda",
+    "country_name_long":"Bermuda",
+    "local_abbrev":"BM"
+  },
+  {
+    "country_code":"BN",
+    "country_name":"Brunei",
+    "country_name_long":"Brunei Darussalam",
+    "local_abbrev":"BN"
+  },
+  {
+    "country_code":"BO",
+    "country_name":"Bolivia",
+    "country_name_long":"Republic of Bolivia",
+    "local_abbrev":"BO"
+  },
+  {
+    "country_code":"BR",
+    "country_name":"Brazil",
+    "country_name_long":"Federative Republic of Brazil",
+    "local_abbrev":"BR"
+  },
+  {
+    "country_code":"BS",
+    "country_name":"Bahamas",
+    "country_name_long":"Commonwealth of the Bahamas",
+    "local_abbrev":"BS"
+  },
+  {
+    "country_code":"BT",
+    "country_name":"Bhutan",
+    "country_name_long":"Kingdom of Bhutan",
+    "local_abbrev":"BT"
+  },
+  {
+    "country_code":"BV",
+    "country_name":"Bouvet Island",
+    "country_name_long":"Bouvet Island",
+    "local_abbrev":"BV"
+  },
+  {
+    "country_code":"BW",
+    "country_name":"Botswana",
+    "country_name_long":"Republic of Botswana",
+    "local_abbrev":"BW"
+  },
+  {
+    "country_code":"BY",
+    "country_name":"Belarus",
+    "country_name_long":"Republic of Belarus",
+    "local_abbrev":"BY"
+  },
+  {
+    "country_code":"BZ",
+    "country_name":"Belize",
+    "country_name_long":"Belize",
+    "local_abbrev":"BZ"
+  },
+  {
+    "country_code":"CA",
+    "country_name":"Canada",
+    "country_name_long":"Canada",
+    "local_abbrev":"CA"
+  },
+  {
+    "country_code":"CC",
+    "country_name":"Cocos (Keeling) Islands",
+    "country_name_long":"Cocos (Keeling) Islands",
+    "local_abbrev":"CC"
+  },
+  {
+    "country_code":"CD",
+    "country_name":"DR Congo",
+    "country_name_long":"Democratic Republic of Congo",
+    "local_abbrev":"CD"
+  },
+  {
+    "country_code":"CF",
+    "country_name":"Central African Republic",
+    "country_name_long":"Central African Republic",
+    "local_abbrev":"CF"
+  },
+  {
+    "country_code":"CG",
+    "country_name":"Congo",
+    "country_name_long":"Republic of the Congo",
+    "local_abbrev":"CG"
+  },
+  {
+    "country_code":"CH",
+    "country_name":"Switzerland",
+    "country_name_long":"Swiss Confederation",
+    "local_abbrev":"CH"
+  },
+  {
+    "country_code":"CI",
+    "country_name":"Côte d'Ivoire",
+    "country_name_long":"Republic of Côte d'Ivoire",
+    "local_abbrev":"CI"
+  },
+  {
+    "country_code":"CK",
+    "country_name":"Cook Islands",
+    "country_name_long":"Cook Islands",
+    "local_abbrev":"CK"
+  },
+  {
+    "country_code":"CL",
+    "country_name":"Chile",
+    "country_name_long":"Republic of Chile",
+    "local_abbrev":"CL"
+  },
+  {
+    "country_code":"CM",
+    "country_name":"Cameroon",
+    "country_name_long":"Republic of Cameroon",
+    "local_abbrev":"CM"
+  },
+  {
+    "country_code":"CN",
+    "country_name":"China",
+    "country_name_long":"People's Republic of China",
+    "local_abbrev":"CN"
+  },
+  {
+    "country_code":"CO",
+    "country_name":"Colombia",
+    "country_name_long":"Republic of Colombia",
+    "local_abbrev":"CO"
+  },
+  {
+    "country_code":"CP",
+    "country_name":"Clipperton Island",
+    "country_name_long":"Clipperton Island",
+    "local_abbrev":"CP"
+  },
+  {
+    "country_code":"CR",
+    "country_name":"Costa Rica",
+    "country_name_long":"Republic of Costa Rica",
+    "local_abbrev":"CR"
+  },
+  {
+    "country_code":"CS",
+    "country_name":"Coral Sea Islands",
+    "country_name_long":"Coral Sea Islands",
+    "local_abbrev":"CS"
+  },
+  {
+    "country_code":"CU",
+    "country_name":"Cuba",
+    "country_name_long":"Republic of Cuba",
+    "local_abbrev":"CU"
+  },
+  {
+    "country_code":"CV",
+    "country_name":"Cape Verde",
+    "country_name_long":"Republic of Cape Verde",
+    "local_abbrev":"CV"
+  },
+  {
+    "country_code":"CX",
+    "country_name":"Christmas Island",
+    "country_name_long":"Christmas Island",
+    "local_abbrev":"CX"
+  },
+  {
+    "country_code":"CY",
+    "country_name":"Cyprus",
+    "country_name_long":"Republic of Cyprus",
+    "local_abbrev":"CY"
+  },
+  {
+    "country_code":"CZ",
+    "country_name":"Czech Republic",
+    "country_name_long":"Czech Republic",
+    "local_abbrev":"CZ"
+  },
+  {
+    "country_code":"DE",
+    "country_name":"Germany",
+    "country_name_long":"Federal Republic of Germany",
+    "local_abbrev":"DE"
+  },
+  {
+    "country_code":"DJ",
+    "country_name":"Djibouti",
+    "country_name_long":"Republic of Djibouti",
+    "local_abbrev":"DJ"
+  },
+  {
+    "country_code":"DK",
+    "country_name":"Denmark",
+    "country_name_long":"Kingdom of Denmark",
+    "local_abbrev":"DK"
+  },
+  {
+    "country_code":"DM",
+    "country_name":"Dominica",
+    "country_name_long":"Commonwealth of Dominica",
+    "local_abbrev":"DM"
+  },
+  {
+    "country_code":"DO",
+    "country_name":"Dominican Republic",
+    "country_name_long":"Dominican Republic",
+    "local_abbrev":"DO"
+  },
+  {
+    "country_code":"DZ",
+    "country_name":"Algeria",
+    "country_name_long":"People's Democratic Republic of Algeria",
+    "local_abbrev":"DZ"
+  },
+  {
+    "country_code":"EC",
+    "country_name":"Ecuador",
+    "country_name_long":"Republic of Ecuador",
+    "local_abbrev":"EC"
+  },
+  {
+    "country_code":"EE",
+    "country_name":"Estonia",
+    "country_name_long":"Republic of Estonia",
+    "local_abbrev":"EE"
+  },
+  {
+    "country_code":"EG",
+    "country_name":"Egypt",
+    "country_name_long":"Arab Republic of Egypt",
+    "local_abbrev":"EG"
+  },
+  {
+    "country_code":"EH",
+    "country_name":"Western Sahara",
+    "country_name_long":"Western Sahara",
+    "local_abbrev":"EH"
+  },
+  {
+    "country_code":"ER",
+    "country_name":"Eritrea",
+    "country_name_long":"Eritrea",
+    "local_abbrev":"ER"
+  },
+  {
+    "country_code":"ES",
+    "country_name":"Spain",
+    "country_name_long":"Kingdom of Spain",
+    "local_abbrev":"ES"
+  },
+  {
+    "country_code":"ET",
+    "country_name":"Ethiopia",
+    "country_name_long":"Ethiopia",
+    "local_abbrev":"ET"
+  },
+  {
+    "country_code":"FI",
+    "country_name":"Finland",
+    "country_name_long":"Republic of Finland",
+    "local_abbrev":"FI"
+  },
+  {
+    "country_code":"FJ",
+    "country_name":"Fiji",
+    "country_name_long":"Republic of Fiji",
+    "local_abbrev":"FJ"
+  },
+  {
+    "country_code":"FK",
+    "country_name":"Falkland Islands (Malvinas)",
+    "country_name_long":"Falkland Islands (Malvinas)",
+    "local_abbrev":"FK"
+  },
+  {
+    "country_code":"FM",
+    "country_name":"Micronesia",
+    "country_name_long":"Federated States of Micronesia",
+    "local_abbrev":"FM"
+  },
+  {
+    "country_code":"FO",
+    "country_name":"Faroe Islands",
+    "country_name_long":"Faroe Islands",
+    "local_abbrev":"FO"
+  },
+  {
+    "country_code":"FR",
+    "country_name":"France",
+    "country_name_long":"French Republic",
+    "local_abbrev":"FR"
+  },
+  {
+    "country_code":"GA",
+    "country_name":"Gabon",
+    "country_name_long":"Gabonese Republic",
+    "local_abbrev":"GA"
+  },
+  {
+    "country_code":"GB",
+    "country_name":"United Kingdom",
+    "country_name_long":"United Kingdom of Great Britain and Northern Ireland",
+    "local_abbrev":"GB"
+  },
+  {
+    "country_code":"GD",
+    "country_name":"Grenada",
+    "country_name_long":"Grenada",
+    "local_abbrev":"GD"
+  },
+  {
+    "country_code":"GE",
+    "country_name":"Georgia",
+    "country_name_long":"Republic of Georgia",
+    "local_abbrev":"GE"
+  },
+  {
+    "country_code":"GF",
+    "country_name":"French Guiana",
+    "country_name_long":"Department of Guiana",
+    "local_abbrev":"GF"
+  },
+  {
+    "country_code":"GG",
+    "country_name":"Guernsey",
+    "country_name_long":"Guernsey",
+    "local_abbrev":"GG"
+  },
+  {
+    "country_code":"GH",
+    "country_name":"Ghana",
+    "country_name_long":"Republic of Ghana",
+    "local_abbrev":"GH"
+  },
+  {
+    "country_code":"GI",
+    "country_name":"Gibraltar",
+    "country_name_long":"Gibraltar",
+    "local_abbrev":"GI"
+  },
+  {
+    "country_code":"GL",
+    "country_name":"Greenland",
+    "country_name_long":"Greenland",
+    "local_abbrev":"GL"
+  },
+  {
+    "country_code":"GM",
+    "country_name":"Gambia",
+    "country_name_long":"Republic of the Gambia",
+    "local_abbrev":"GM"
+  },
+  {
+    "country_code":"GN",
+    "country_name":"Guinea",
+    "country_name_long":"Republic of Guinea",
+    "local_abbrev":"GN"
+  },
+  {
+    "country_code":"GP",
+    "country_name":"Guadeloupe",
+    "country_name_long":"Department of Guadeloupe",
+    "local_abbrev":"GP"
+  },
+  {
+    "country_code":"GQ",
+    "country_name":"Equatorial Guinea",
+    "country_name_long":"Republic of Equatorial Guinea",
+    "local_abbrev":"GQ"
+  },
+  {
+    "country_code":"GR",
+    "country_name":"Greece",
+    "country_name_long":"Hellenic Republic",
+    "local_abbrev":"GR"
+  },
+  {
+    "country_code":"GS",
+    "country_name":"South Georgia and South Sandwich Islands",
+    "country_name_long":"South Georgia and the South Sandwich Islands",
+    "local_abbrev":"GS"
+  },
+  {
+    "country_code":"GT",
+    "country_name":"Guatemala",
+    "country_name_long":"Republic of Guatemala",
+    "local_abbrev":"GT"
+  },
+  {
+    "country_code":"GU",
+    "country_name":"Guam",
+    "country_name_long":"Guam",
+    "local_abbrev":"GU"
+  },
+  {
+    "country_code":"GW",
+    "country_name":"Guinea-Bissau",
+    "country_name_long":"Republic of Guinea-Bissau",
+    "local_abbrev":"GW"
+  },
+  {
+    "country_code":"GY",
+    "country_name":"Guyana",
+    "country_name_long":"Republic of Guyana",
+    "local_abbrev":"GY"
+  },
+  {
+    "country_code":"HK",
+    "country_name":"Hong Kong",
+    "country_name_long":"Hong Kong",
+    "local_abbrev":"HK"
+  },
+  {
+    "country_code":"HM",
+    "country_name":"Heard Island and McDonald Islands",
+    "country_name_long":"Heard Island and McDonald Islands",
+    "local_abbrev":"HM"
+  },
+  {
+    "country_code":"HN",
+    "country_name":"Honduras",
+    "country_name_long":"Republic of Honduras",
+    "local_abbrev":"HN"
+  },
+  {
+    "country_code":"HR",
+    "country_name":"Croatia",
+    "country_name_long":"Republic of Croatia",
+    "local_abbrev":"HR"
+  },
+  {
+    "country_code":"HT",
+    "country_name":"Haiti",
+    "country_name_long":"Republic of Haiti",
+    "local_abbrev":"HT"
+  },
+  {
+    "country_code":"HU",
+    "country_name":"Hungary",
+    "country_name_long":"Republic of Hungary",
+    "local_abbrev":"HU"
+  },
+  {
+    "country_code":"ID",
+    "country_name":"Indonesia",
+    "country_name_long":"Republic of Indonesia",
+    "local_abbrev":"ID"
+  },
+  {
+    "country_code":"IE",
+    "country_name":"Ireland",
+    "country_name_long":"Ireland",
+    "local_abbrev":"IE"
+  },
+  {
+    "country_code":"IL",
+    "country_name":"Israel",
+    "country_name_long":"State of Israel",
+    "local_abbrev":"IL"
+  },
+  {
+    "country_code":"IM",
+    "country_name":"Isle of Man",
+    "country_name_long":"Isle of Man",
+    "local_abbrev":"IM"
+  },
+  {
+    "country_code":"IN",
+    "country_name":"India",
+    "country_name_long":"Republic of India",
+    "local_abbrev":"IN"
+  },
+  {
+    "country_code":"IO",
+    "country_name":"British Indian Ocean Territory",
+    "country_name_long":"British Indian Ocean Territory",
+    "local_abbrev":"IO"
+  },
+  {
+    "country_code":"IQ",
+    "country_name":"Iraq",
+    "country_name_long":"Republic of Iraq",
+    "local_abbrev":"IQ"
+  },
+  {
+    "country_code":"IR",
+    "country_name":"Iran",
+    "country_name_long":"Islamic Republic of Iran",
+    "local_abbrev":"IR"
+  },
+  {
+    "country_code":"IS",
+    "country_name":"Iceland",
+    "country_name_long":"Republic of Iceland",
+    "local_abbrev":"IS"
+  },
+  {
+    "country_code":"IT",
+    "country_name":"Italy",
+    "country_name_long":"Italian Republic",
+    "local_abbrev":"IT"
+  },
+  {
+    "country_code":"JE",
+    "country_name":"Jersey",
+    "country_name_long":"Jersey",
+    "local_abbrev":"JE"
+  },
+  {
+    "country_code":"JM",
+    "country_name":"Jamaica",
+    "country_name_long":"Jamaica",
+    "local_abbrev":"JM"
+  },
+  {
+    "country_code":"JO",
+    "country_name":"Jordan",
+    "country_name_long":"Hashemite Kingdom of Jordan",
+    "local_abbrev":"JO"
+  },
+  {
+    "country_code":"JP",
+    "country_name":"Japan",
+    "country_name_long":"Japan",
+    "local_abbrev":"JP"
+  },
+  {
+    "country_code":"KE",
+    "country_name":"Kenya",
+    "country_name_long":"Republic of Kenya",
+    "local_abbrev":"KE"
+  },
+  {
+    "country_code":"KG",
+    "country_name":"Kyrgyzstan",
+    "country_name_long":"Kyrgyz Republic",
+    "local_abbrev":"KG"
+  },
+  {
+    "country_code":"KH",
+    "country_name":"Cambodia",
+    "country_name_long":"Kingdom of Cambodia",
+    "local_abbrev":"KH"
+  },
+  {
+    "country_code":"KI",
+    "country_name":"Kiribati",
+    "country_name_long":"Kiribati",
+    "local_abbrev":"KI"
+  },
+  {
+    "country_code":"KM",
+    "country_name":"Comoros",
+    "country_name_long":"Islamic Federal Republic of the Comoros",
+    "local_abbrev":"KM"
+  },
+  {
+    "country_code":"KN",
+    "country_name":"Saint Kitts and Nevis",
+    "country_name_long":"Saint Kitts and Nevis",
+    "local_abbrev":"KN"
+  },
+  {
+    "country_code":"KP",
+    "country_name":"North Korea",
+    "country_name_long":"Korea, Democratic People's Republic of",
+    "local_abbrev":"KP"
+  },
+  {
+    "country_code":"KR",
+    "country_name":"South Korea",
+    "country_name_long":"Korea, Republic of",
+    "local_abbrev":"KR"
+  },
+  {
+    "country_code":"KW",
+    "country_name":"Kuwait",
+    "country_name_long":"State of Kuwait",
+    "local_abbrev":"KW"
+  },
+  {
+    "country_code":"KY",
+    "country_name":"Cayman Islands",
+    "country_name_long":"Cayman Islands",
+    "local_abbrev":"KY"
+  },
+  {
+    "country_code":"KZ",
+    "country_name":"Kazakhstan",
+    "country_name_long":"Republic of Kazakhstan",
+    "local_abbrev":"KZ"
+  },
+  {
+    "country_code":"LA",
+    "country_name":"Laos",
+    "country_name_long":"Lao People's Democratic Republic",
+    "local_abbrev":"LA"
+  },
+  {
+    "country_code":"LB",
+    "country_name":"Lebanon",
+    "country_name_long":"Lebanese Republic",
+    "local_abbrev":"LB"
+  },
+  {
+    "country_code":"LC",
+    "country_name":"Saint Lucia",
+    "country_name_long":"Saint Lucia",
+    "local_abbrev":"LC"
+  },
+  {
+    "country_code":"LI",
+    "country_name":"Liechtenstein",
+    "country_name_long":"Principality of Liechtenstein",
+    "local_abbrev":"LI"
+  },
+  {
+    "country_code":"LK",
+    "country_name":"Sri Lanka",
+    "country_name_long":"Democratic Socialist Republic of Sri Lanka",
+    "local_abbrev":"LK"
+  },
+  {
+    "country_code":"LR",
+    "country_name":"Liberia",
+    "country_name_long":"Republic of Liberia",
+    "local_abbrev":"LR"
+  },
+  {
+    "country_code":"LS",
+    "country_name":"Lesotho",
+    "country_name_long":"Kingdom of Lesotho",
+    "local_abbrev":"LS"
+  },
+  {
+    "country_code":"LT",
+    "country_name":"Lithuania",
+    "country_name_long":"Republic of Lithuania",
+    "local_abbrev":"LT"
+  },
+  {
+    "country_code":"LU",
+    "country_name":"Luxembourg",
+    "country_name_long":"Grand Duchy of Luxembourg",
+    "local_abbrev":"LU"
+  },
+  {
+    "country_code":"LV",
+    "country_name":"Latvia",
+    "country_name_long":"Republic of Latvia",
+    "local_abbrev":"LV"
+  },
+  {
+    "country_code":"LY",
+    "country_name":"Libya",
+    "country_name_long":"Socialist People's Libyan Arab Jamahiriya",
+    "local_abbrev":"LY"
+  },
+  {
+    "country_code":"MA",
+    "country_name":"Morocco",
+    "country_name_long":"Kingdom of Morocco",
+    "local_abbrev":"MA"
+  },
+  {
+    "country_code":"MC",
+    "country_name":"Monaco",
+    "country_name_long":"Principality of Monaco",
+    "local_abbrev":"MC"
+  },
+  {
+    "country_code":"MD",
+    "country_name":"Moldova",
+    "country_name_long":"Moldova, Republic of",
+    "local_abbrev":"MD"
+  },
+  {
+    "country_code":"ME",
+    "country_name":"Montenegro",
+    "country_name_long":"Montenegro",
+    "local_abbrev":"ME"
+  },
+  {
+    "country_code":"MF",
+    "country_name":"Saint Martin (French part)",
+    "country_name_long":"Saint Martin (French part)",
+    "local_abbrev":"MF"
+  },
+  {
+    "country_code":"MG",
+    "country_name":"Madagascar",
+    "country_name_long":"Republic of Madagascar",
+    "local_abbrev":"MG"
+  },
+  {
+    "country_code":"MH",
+    "country_name":"Marshall Islands",
+    "country_name_long":"Republic of the Marshall Islands",
+    "local_abbrev":"MH"
+  },
+  {
+    "country_code":"MK",
+    "country_name":"Macedonia",
+    "country_name_long":"Macedonia",
+    "local_abbrev":"MK"
+  },
+  {
+    "country_code":"ML",
+    "country_name":"Mali",
+    "country_name_long":"Republic of Mali",
+    "local_abbrev":"ML"
+  },
+  {
+    "country_code":"MM",
+    "country_name":"Myanmar",
+    "country_name_long":"Union of Myanmar",
+    "local_abbrev":"MM"
+  },
+  {
+    "country_code":"MN",
+    "country_name":"Mongolia",
+    "country_name_long":"Mongolia",
+    "local_abbrev":"MN"
+  },
+  {
+    "country_code":"MO",
+    "country_name":"Macau",
+    "country_name_long":"Macau",
+    "local_abbrev":"MO"
+  },
+  {
+    "country_code":"MP",
+    "country_name":"Northern Mariana Islands",
+    "country_name_long":"Commonwealth of the Northern Mariana Islands",
+    "local_abbrev":"MP"
+  },
+  {
+    "country_code":"MQ",
+    "country_name":"Martinique",
+    "country_name_long":"Department of Martinique",
+    "local_abbrev":"MQ"
+  },
+  {
+    "country_code":"MR",
+    "country_name":"Mauritania",
+    "country_name_long":"Islamic Republic of Mauritania",
+    "local_abbrev":"MR"
+  },
+  {
+    "country_code":"MS",
+    "country_name":"Montserrat",
+    "country_name_long":"Montserrat",
+    "local_abbrev":"MS"
+  },
+  {
+    "country_code":"MT",
+    "country_name":"Malta",
+    "country_name_long":"Republic of Malta",
+    "local_abbrev":"MT"
+  },
+  {
+    "country_code":"MU",
+    "country_name":"Mauritius",
+    "country_name_long":"Republic of Mauritius",
+    "local_abbrev":"MU"
+  },
+  {
+    "country_code":"MV",
+    "country_name":"Maldives",
+    "country_name_long":"Republic of Maldives",
+    "local_abbrev":"MV"
+  },
+  {
+    "country_code":"MW",
+    "country_name":"Malawi",
+    "country_name_long":"Republic of Malawi",
+    "local_abbrev":"MW"
+  },
+  {
+    "country_code":"MX",
+    "country_name":"Mexico",
+    "country_name_long":"United Mexican States",
+    "local_abbrev":"MX"
+  },
+  {
+    "country_code":"MY",
+    "country_name":"Malaysia",
+    "country_name_long":"Malaysia",
+    "local_abbrev":"MY"
+  },
+  {
+    "country_code":"MZ",
+    "country_name":"Mozambique",
+    "country_name_long":"Republic of Mozambique",
+    "local_abbrev":"MZ"
+  },
+  {
+    "country_code":"NA",
+    "country_name":"Namibia",
+    "country_name_long":"Republic of Namibia",
+    "local_abbrev":"NA"
+  },
+  {
+    "country_code":"NC",
+    "country_name":"New Caledonia",
+    "country_name_long":"New Caledonia",
+    "local_abbrev":"NC"
+  },
+  {
+    "country_code":"NE",
+    "country_name":"Niger",
+    "country_name_long":"Republic of the Niger",
+    "local_abbrev":"NE"
+  },
+  {
+    "country_code":"NF",
+    "country_name":"Norfolk Island",
+    "country_name_long":"Norfolk Island",
+    "local_abbrev":"NF"
+  },
+  {
+    "country_code":"NG",
+    "country_name":"Nigeria",
+    "country_name_long":"Federal Republic of Nigeria",
+    "local_abbrev":"NG"
+  },
+  {
+    "country_code":"NI",
+    "country_name":"Nicaragua",
+    "country_name_long":"Republic of Nicaragua",
+    "local_abbrev":"NI"
+  },
+  {
+    "country_code":"NL",
+    "country_name":"Netherlands",
+    "country_name_long":"Kingdom of the Netherlands",
+    "local_abbrev":"NL"
+  },
+  {
+    "country_code":"NO",
+    "country_name":"Norway",
+    "country_name_long":"Kingdom of Norway",
+    "local_abbrev":"NO"
+  },
+  {
+    "country_code":"NP",
+    "country_name":"Nepal",
+    "country_name_long":"Kingdom of Nepal",
+    "local_abbrev":"NP"
+  },
+  {
+    "country_code":"NR",
+    "country_name":"Nauru",
+    "country_name_long":"Republic of Nauru",
+    "local_abbrev":"NR"
+  },
+  {
+    "country_code":"NU",
+    "country_name":"Niue",
+    "country_name_long":"Niue",
+    "local_abbrev":"NU"
+  },
+  {
+    "country_code":"NZ",
+    "country_name":"New Zealand",
+    "country_name_long":"New Zealand",
+    "local_abbrev":"NZ"
+  },
+  {
+    "country_code":"OM",
+    "country_name":"Oman",
+    "country_name_long":"Sultanate of Oman",
+    "local_abbrev":"OM"
+  },
+  {
+    "country_code":"PA",
+    "country_name":"Panama",
+    "country_name_long":"Republic of Panama",
+    "local_abbrev":"PA"
+  },
+  {
+    "country_code":"PE",
+    "country_name":"Peru",
+    "country_name_long":"Republic of Peru",
+    "local_abbrev":"PE"
+  },
+  {
+    "country_code":"PF",
+    "country_name":"French Polynesia",
+    "country_name_long":"French Polynesia",
+    "local_abbrev":"PF"
+  },
+  {
+    "country_code":"PG",
+    "country_name":"Papua New Guinea",
+    "country_name_long":"Papua New Guinea",
+    "local_abbrev":"PG"
+  },
+  {
+    "country_code":"PH",
+    "country_name":"Philippines",
+    "country_name_long":"Republic of the Philippines",
+    "local_abbrev":"PH"
+  },
+  {
+    "country_code":"PK",
+    "country_name":"Pakistan",
+    "country_name_long":"Islamic Republic of Pakistan",
+    "local_abbrev":"PK"
+  },
+  {
+    "country_code":"PL",
+    "country_name":"Poland",
+    "country_name_long":"Republic of Poland",
+    "local_abbrev":"PL"
+  },
+  {
+    "country_code":"PM",
+    "country_name":"Saint Pierre and Miquelon",
+    "country_name_long":"Territorial collectivity of St. Pierre and Miquelon",
+    "local_abbrev":"PM"
+  },
+  {
+    "country_code":"PN",
+    "country_name":"Pitcairn Islands",
+    "country_name_long":"Pitcairn",
+    "local_abbrev":"PN"
+  },
+  {
+    "country_code":"PR",
+    "country_name":"Puerto Rico",
+    "country_name_long":"Puerto Rico",
+    "local_abbrev":"PR"
+  },
+  {
+    "country_code":"PS",
+    "country_name":"Palestinian Territory",
+    "country_name_long":"Palestinian Territory",
+    "local_abbrev":"PS"
+  },
+  {
+    "country_code":"PT",
+    "country_name":"Portugal",
+    "country_name_long":"Portuguese Republic",
+    "local_abbrev":"PT"
+  },
+  {
+    "country_code":"PW",
+    "country_name":"Palau",
+    "country_name_long":"Republic of Palau",
+    "local_abbrev":"PW"
+  },
+  {
+    "country_code":"PY",
+    "country_name":"Paraguay",
+    "country_name_long":"Republic of Paraguay",
+    "local_abbrev":"PY"
+  },
+  {
+    "country_code":"QA",
+    "country_name":"Qatar",
+    "country_name_long":"State of Qatar",
+    "local_abbrev":"QA"
+  },
+  {
+    "country_code":"RE",
+    "country_name":"Réunion",
+    "country_name_long":"Department of Réunion",
+    "local_abbrev":"RE"
+  },
+  {
+    "country_code":"RO",
+    "country_name":"Romania",
+    "country_name_long":"Romania",
+    "local_abbrev":"RO"
+  },
+  {
+    "country_code":"RS",
+    "country_name":"Serbia",
+    "country_name_long":"Serbia",
+    "local_abbrev":"RS"
+  },
+  {
+    "country_code":"RU",
+    "country_name":"Russia",
+    "country_name_long":"Russian Federation",
+    "local_abbrev":"RU"
+  },
+  {
+    "country_code":"RW",
+    "country_name":"Rwanda",
+    "country_name_long":"Rwandese Republic",
+    "local_abbrev":"RW"
+  },
+  {
+    "country_code":"SA",
+    "country_name":"Saudi Arabia",
+    "country_name_long":"Kingdom of Saudi Arabia",
+    "local_abbrev":"SA"
+  },
+  {
+    "country_code":"SB",
+    "country_name":"Solomon Islands",
+    "country_name_long":"Solomon Islands",
+    "local_abbrev":"SB"
+  },
+  {
+    "country_code":"SC",
+    "country_name":"Seychelles",
+    "country_name_long":"Republic of Seychelles",
+    "local_abbrev":"SC"
+  },
+  {
+    "country_code":"SD",
+    "country_name":"Sudan",
+    "country_name_long":"Republic of the Sudan",
+    "local_abbrev":"SD"
+  },
+  {
+    "country_code":"SE",
+    "country_name":"Sweden",
+    "country_name_long":"Kingdom of Sweden",
+    "local_abbrev":"SE"
+  },
+  {
+    "country_code":"SG",
+    "country_name":"Singapore",
+    "country_name_long":"Republic of Singapore",
+    "local_abbrev":"SG"
+  },
+  {
+    "country_code":"SH",
+    "country_name":"Saint Helena, Ascension, and Tristan da Cunha",
+    "country_name_long":"Saint Helena",
+    "local_abbrev":"SH"
+  },
+  {
+    "country_code":"SI",
+    "country_name":"Slovenia",
+    "country_name_long":"Republic of Slovenia",
+    "local_abbrev":"SI"
+  },
+  {
+    "country_code":"SJ",
+    "country_name":"Svalbard",
+    "country_name_long":"Svalbard and Jan Mayen",
+    "local_abbrev":"SJ"
+  },
+  {
+    "country_code":"SK",
+    "country_name":"Slovakia",
+    "country_name_long":"Slovak Republic",
+    "local_abbrev":"SK"
+  },
+  {
+    "country_code":"SL",
+    "country_name":"Sierra Leone",
+    "country_name_long":"Republic of Sierra Leone",
+    "local_abbrev":"SL"
+  },
+  {
+    "country_code":"SM",
+    "country_name":"San Marino",
+    "country_name_long":"Republic of San Marino",
+    "local_abbrev":"SM"
+  },
+  {
+    "country_code":"SN",
+    "country_name":"Senegal",
+    "country_name_long":"Republic of Senegal",
+    "local_abbrev":"SN"
+  },
+  {
+    "country_code":"SO",
+    "country_name":"Somalia",
+    "country_name_long":"Somali Democratic Republic",
+    "local_abbrev":"SO"
+  },
+  {
+    "country_code":"SR",
+    "country_name":"Suriname",
+    "country_name_long":"Republic of Suriname",
+    "local_abbrev":"SR"
+  },
+  {
+    "country_code":"SS",
+    "country_name":"South Sudan",
+    "country_name_long":"South Sudan",
+    "local_abbrev":"SS"
+  },
+  {
+    "country_code":"ST",
+    "country_name":"São Tomé and Príncipe",
+    "country_name_long":"Democratic Republic of Sao Tome and Principe",
+    "local_abbrev":"ST"
+  },
+  {
+    "country_code":"SV",
+    "country_name":"El Salvador",
+    "country_name_long":"Republic of El Salvador",
+    "local_abbrev":"SV"
+  },
+  {
+    "country_code":"SY",
+    "country_name":"Syria",
+    "country_name_long":"Syrian Arab Republic",
+    "local_abbrev":"SY"
+  },
+  {
+    "country_code":"SZ",
+    "country_name":"Swaziland",
+    "country_name_long":"Kingdom of Swaziland",
+    "local_abbrev":"SZ"
+  },
+  {
+    "country_code":"TC",
+    "country_name":"Turks and Caicos Islands",
+    "country_name_long":"Turks and Caicos Islands",
+    "local_abbrev":"TC"
+  },
+  {
+    "country_code":"TD",
+    "country_name":"Chad",
+    "country_name_long":"Republic of Chad",
+    "local_abbrev":"TD"
+  },
+  {
+    "country_code":"TF",
+    "country_name":"French Southern and Antarctic Lands",
+    "country_name_long":"French Southern Territories",
+    "local_abbrev":"TF"
+  },
+  {
+    "country_code":"TG",
+    "country_name":"Togo",
+    "country_name_long":"Togolese Republic",
+    "local_abbrev":"TG"
+  },
+  {
+    "country_code":"TH",
+    "country_name":"Thailand",
+    "country_name_long":"Kingdom of Thailand",
+    "local_abbrev":"TH"
+  },
+  {
+    "country_code":"TJ",
+    "country_name":"Tajikistan",
+    "country_name_long":"Republic of Tajikistan",
+    "local_abbrev":"TJ"
+  },
+  {
+    "country_code":"TK",
+    "country_name":"Tokelau",
+    "country_name_long":"Tokelau",
+    "local_abbrev":"TK"
+  },
+  {
+    "country_code":"TL",
+    "country_name":"Timor-Leste",
+    "country_name_long":"Timor-Leste",
+    "local_abbrev":"TL"
+  },
+  {
+    "country_code":"TM",
+    "country_name":"Turkmenistan",
+    "country_name_long":"Turkmenistan",
+    "local_abbrev":"TM"
+  },
+  {
+    "country_code":"TN",
+    "country_name":"Tunisia",
+    "country_name_long":"Republic of Tunisia",
+    "local_abbrev":"TN"
+  },
+  {
+    "country_code":"TO",
+    "country_name":"Tonga",
+    "country_name_long":"Kingdom of Tonga",
+    "local_abbrev":"TO"
+  },
+  {
+    "country_code":"TR",
+    "country_name":"Turkey",
+    "country_name_long":"Republic of Turkey",
+    "local_abbrev":"TR"
+  },
+  {
+    "country_code":"TT",
+    "country_name":"Trinidad and Tobago",
+    "country_name_long":"Republic of Trinidad and Tobago",
+    "local_abbrev":"TT"
+  },
+  {
+    "country_code":"TV",
+    "country_name":"Tuvalu",
+    "country_name_long":"Tuvalu",
+    "local_abbrev":"TV"
+  },
+  {
+    "country_code":"TW",
+    "country_name":"Taiwan",
+    "country_name_long":"Taiwan, Province of China",
+    "local_abbrev":"TW"
+  },
+  {
+    "country_code":"TZ",
+    "country_name":"Tanzania",
+    "country_name_long":"Tanzania, United Republic of",
+    "local_abbrev":"TZ"
+  },
+  {
+    "country_code":"UA",
+    "country_name":"Ukraine",
+    "country_name_long":"Ukraine",
+    "local_abbrev":"UA"
+  },
+  {
+    "country_code":"UG",
+    "country_name":"Uganda",
+    "country_name_long":"Republic of Uganda",
+    "local_abbrev":"UG"
+  },
+  {
+    "country_code":"UM",
+    "country_name":"United States Minor Outlying Islands",
+    "country_name_long":"United States Minor Outlying Islands",
+    "local_abbrev":"UM"
+  },
+  {
+    "country_code":"US",
+    "country_name":"United States",
+    "country_name_long":"United States of America",
+    "local_abbrev":"US"
+  },
+  {
+    "country_code":"UY",
+    "country_name":"Uruguay",
+    "country_name_long":"Eastern Republic of Uruguay",
+    "local_abbrev":"UY"
+  },
+  {
+    "country_code":"UZ",
+    "country_name":"Uzbekistan",
+    "country_name_long":"Republic of Uzbekistan",
+    "local_abbrev":"UZ"
+  },
+  {
+    "country_code":"VA",
+    "country_name":"Vatican City (Holy See)",
+    "country_name_long":"Vatican City State (Holy See)",
+    "local_abbrev":"VA"
+  },
+  {
+    "country_code":"VC",
+    "country_name":"Saint Vincent and the Grenadines",
+    "country_name_long":"Saint Vincent and the Grenadines",
+    "local_abbrev":"VC"
+  },
+  {
+    "country_code":"VE",
+    "country_name":"Venezuela",
+    "country_name_long":"Republic of Venezuela",
+    "local_abbrev":"VE"
+  },
+  {
+    "country_code":"VG",
+    "country_name":"Virgin Islands (British)",
+    "country_name_long":"Virgin Islands (British)",
+    "local_abbrev":"VG"
+  },
+  {
+    "country_code":"VI",
+    "country_name":"Virgin Islands (U.S.)",
+    "country_name_long":"Virgin Islands of the United States",
+    "local_abbrev":"VI"
+  },
+  {
+    "country_code":"VN",
+    "country_name":"Vietnam",
+    "country_name_long":"Socialist Republic of Viet Nam",
+    "local_abbrev":"VN"
+  },
+  {
+    "country_code":"VU",
+    "country_name":"Vanuatu",
+    "country_name_long":"Republic of Vanuatu",
+    "local_abbrev":"VU"
+  },
+  {
+    "country_code":"WF",
+    "country_name":"Wallis and Futuna",
+    "country_name_long":"Wallis and Futuna Islands",
+    "local_abbrev":"WF"
+  },
+  {
+    "country_code":"WS",
+    "country_name":"Samoa",
+    "country_name_long":"Independent State of Western Samoa",
+    "local_abbrev":"WS"
+  },
+  {
+    "country_code":"XK",
+    "country_name":"Kosovo",
+    "country_name_long":"Kosovo",
+    "local_abbrev":"XK"
+  },
+  {
+    "country_code":"XX",
+    "country_name":"High Seas",
+    "country_name_long":"Unknown",
+    "local_abbrev":"XX"
+  },
+  {
+    "country_code":"YE",
+    "country_name":"Yemen",
+    "country_name_long":"Republic of Yemen",
+    "local_abbrev":"YE"
+  },
+  {
+    "country_code":"YT",
+    "country_name":"Mayotte",
+    "country_name_long":"Territorial collectivity of Mayotte",
+    "local_abbrev":"YT"
+  },
+  {
+    "country_code":"ZA",
+    "country_name":"South Africa",
+    "country_name_long":"Republic of South Africa",
+    "local_abbrev":"ZA"
+  },
+  {
+    "country_code":"ZM",
+    "country_name":"Zambia",
+    "country_name_long":"Republic of Zambia",
+    "local_abbrev":"ZM"
+  },
+  {
+    "country_code":"ZW",
+    "country_name":"Zimbabwe",
+    "country_name_long":"Republic of Zimbabwe",
+    "local_abbrev":"ZW"
+  }
+]

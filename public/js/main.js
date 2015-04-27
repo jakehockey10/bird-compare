@@ -20,6 +20,7 @@ function setThenGetDOMMapView(id, center, zoom) {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18
     }).addTo(map);
+    map.id = id;
 
     return map;
 }
@@ -59,6 +60,8 @@ function handleEBirdAPIResponse (map, data, endpoint) {
     var response = JSON.parse(data.body);
     if (data.err) {
         renderAlert('danger', 'Error', JSON.stringify(data.err));
+    } else if (response.errorCode) {
+        renderAlert('danger', 'Error', response.errorMsg)
     } else if (response.length == 0) {
         renderAlert('info', 'Heads up!', 'No results found');
     } else if (data.template) {
@@ -126,6 +129,8 @@ function findRecentObservationsOfASpeciesInARegionForMap(map, callback) {
         sci: map.species
     };
 
+
+
     $.get('/birds/data/obs/region_spp/recent', parameters, function (data) {
         handleEBirdAPIResponse(map, data,'recentObservationsOfASpeciesInARegion');
         if (typeof (callback) === 'function') {
@@ -144,16 +149,26 @@ function renderResultsComparison() {
     });
 }
 
+function loading() {
+    $(this).prepend('<i id="waiting" class="fa fa-spinner fa-pulse"></i>');
+}
+
+function doneLoading() {
+    $('#waiting').remove();
+}
+
 /**
  * Set the click listener for the "Recent Nearby Observations" button.
  */
 function setRecentNearbyObservationsClickListener() {
     $('#recent_nearby_observations').on('click', function () {
+        loading.call(this);
         async.parallel([
             function (callback) { findRecentNearbyObservationsForMap(Map1, callback) },
             function (callback) { findRecentNearbyObservationsForMap(Map2, callback) }
         ], function () {
             renderResultsComparison();
+            doneLoading();
         });
     })
 }
@@ -163,11 +178,13 @@ function setRecentNearbyObservationsClickListener() {
  */
 function setNearestLocationsWithObservationsOfASpeciesClickListener() {
     $('#nearest_locations_of_species').on('click', function () {
+        loading.call(this);
         async.parallel([
             function (callback) { findNearestLocationsWithObservationsOfASpeciesForMap(Map1, callback) },
             function (callback) { findNearestLocationsWithObservationsOfASpeciesForMap(Map2, callback) }
         ], function () {
             renderResultsComparison();
+            doneLoading();
         });
     })
 }
@@ -177,11 +194,13 @@ function setNearestLocationsWithObservationsOfASpeciesClickListener() {
  */
 function setRecentObservationsOfASpeciesInARegionClickListener() {
     $('#recent_Observations_OfASpecies_InARegion').on('click', function () {
+        loading.call(this);
         async.parallel([
             function (callback) { findRecentObservationsOfASpeciesInARegionForMap(Map1, callback) },
             function (callback) { findRecentObservationsOfASpeciesInARegionForMap(Map2, callback) }
         ], function () {
             renderResultsComparison();
+            doneLoading();
         });
     })
 }
@@ -199,15 +218,43 @@ function changeComparisonMode(select) {
     }
 }
 
-function SetSpeciesForBothMaps(select) {
-    var option = $('#' + select.id + ' option:selected');
+function setSpeciesForBothMaps() {
+    var species = $('#speciesInput').next().children().data('value');
+    species = decodeURIComponent(species);
     [Map1, Map2].forEach(function (map) {
-        map.species = option.attr('value');
-    });
+        map.species = species;
+    })
 }
 
 function initView() {
     changeComparisonMode($('#c')[0]);
+    $.get('/data/taxa_eBird.json', function (data) {
+        $('#speciesInput').autocomplete({
+            source: [data],
+            valueKey: 'common_name',
+            titleKey: 'common_name',
+            getTitle: function (item) {
+                return item['common_name'] + ' (' + item['scientific_name'] + ')';
+            },
+            getValue: function (item) {
+                return item['scientific_name'];
+            },
+            highlight: true,
+            showHint: true,
+            render: function (item, source, pid, query) {
+                var value = this.getValue(item),
+                    title = this.getTitle(item);
+                return '<div ' + (value == query ? 'class="active"' : '') +
+                    ' data-value="' +
+                    encodeURIComponent(value) + '">' +
+                    title +
+                    '</div>meow';
+            }
+        }).on('selected.xdsoft', function (e, datum) {
+            $('#speciesInput').parent().prev().text(datum.common_name);
+            setSpeciesForBothMaps();
+        })
+    })
 }
 
 /**

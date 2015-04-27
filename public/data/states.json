@@ -1,0 +1,332 @@
+[
+    {
+        "name": "Alabama",
+        "abbreviation": "US-AL",
+        "lat":"32.7990",
+        "lng":"-86.8073"
+    },
+    {
+        "name": "Alaska",
+        "abbreviation": "US-AK",
+        "lat":"61.3850",
+        "lng":"-152.2683"
+    },
+    {
+        "name": "American Samoa",
+        "abbreviation": "US-AS",
+        "lat":"14.2417",
+        "lng":"-170.7197"
+    },
+    {
+        "name": "Arizona",
+        "abbreviation": "US-AZ",
+        "lat":"33.7712",
+        "lng":"-111.3877"
+    },
+    {
+        "name": "Arkansas",
+        "abbreviation": "US-AR",
+        "lat":"34.9513",
+        "lng":"-92.3809"
+    },
+    {
+        "name": "California",
+        "abbreviation": "US-CA",
+        "lat":"36.1700",
+        "lng":"-119.7462"
+    },
+    {
+        "name": "Colorado",
+        "abbreviation": "US-CO",
+        "lat":"39.0646",
+        "lng":"-105.3272"
+    },
+    {
+        "name": "Connecticut",
+        "abbreviation": "US-CT",
+        "lat":"41.5834",
+        "lng":"-72.7622"
+    },
+    {
+        "name": "Delaware",
+        "abbreviation": "US-DE",
+        "lat":"39.3498",
+        "lng":"-75.5148"
+    },
+    {
+        "name": "District Of Columbia",
+        "abbreviation": "US-DC",
+        "lat":"38.8964",
+        "lng":"-77.0262"
+    },
+    {
+        "name": "Florida",
+        "abbreviation": "US-FL",
+        "lat":"27.8333",
+        "lng":"-81.7170"
+    },
+    {
+        "name": "Georgia",
+        "abbreviation": "US-GA",
+        "lat":"32.9866",
+        "lng":"-83.6487"
+    },
+    {
+        "name": "Hawaii",
+        "abbreviation": "US-HI",
+        "lat":"21.1098",
+        "lng":"-157.5311"
+    },
+    {
+        "name": "Idaho",
+        "abbreviation": "US-ID",
+        "lat":"44.2394",
+        "lng":"-114.5103"
+    },
+    {
+        "name": "Illinois",
+        "abbreviation": "US-IL",
+        "lat":"40.3363",
+        "lng":"-89.0022"
+    },
+    {
+        "name": "Indiana",
+        "abbreviation": "US-IN",
+        "lat":"39.8647",
+        "lng":"-86.2604"
+    },
+    {
+        "name": "Iowa",
+        "abbreviation": "US-IA",
+        "lat":"42.0046",
+        "lng":"-93.2140"
+    },
+    {
+        "name": "Kansas",
+        "abbreviation": "US-KS",
+        "lat":"38.5111",
+        "lng":"-96.8005"
+    },
+    {
+        "name": "Kentucky",
+        "abbreviation": "US-KY",
+        "lat":"37.6690",
+        "lng":"-84.6514"
+    },
+    {
+        "name": "Louisiana",
+        "abbreviation": "US-LA",
+        "lat":"31.1801",
+        "lng":"-91.8749"
+    },
+    {
+        "name": "Maine",
+        "abbreviation": "US-ME",
+        "lat":"44.6074",
+        "lng":"-69.3977"
+    },
+    {
+        "name": "Maryland",
+        "abbreviation": "US-MD",
+        "lat":"39.0724",
+        "lng":"-76.7902"
+    },
+    {
+        "name": "Massachusetts",
+        "abbreviation": "US-MA",
+        "lat":"42.2373",
+        "lng":"-71.5314"
+    },
+    {
+        "name": "Michigan",
+        "abbreviation": "US-MI",
+        "lat":"43.3504",
+        "lng":"-84.5603"
+    },
+    {
+        "name": "Minnesota",
+        "abbreviation": "US-MN",
+        "lat":"45.7326",
+        "lng":"-93.9196"
+    },
+    {
+        "name": "Mississippi",
+        "abbreviation": "US-MS",
+        "lat":"32.7673",
+        "lng":"-89.6812"
+    },
+    {
+        "name": "Missouri",
+        "abbreviation": "US-MO",
+        "lat":"38.4623",
+        "lng":"-92.3020"
+    },
+    {
+        "name": "Montana",
+        "abbreviation": "US-MT",
+        "lat":"46.9048",
+        "lng":"-110.3261"
+    },
+    {
+        "name": "Nebraska",
+        "abbreviation": "US-NE",
+        "lat":"41.1289",
+        "lng":"-98.2883"
+    },
+    {
+        "name": "Nevada",
+        "abbreviation": "US-NV",
+        "lat":"38.4199",
+        "lng":"-117.1219"
+    },
+    {
+        "name": "New Hampshire",
+        "abbreviation": "US-NH",
+        "lat":"43.4108",
+        "lng":"-71.5653"
+    },
+    {
+        "name": "New Jersey",
+        "abbreviation": "US-NJ",
+        "lat":"40.3140",
+        "lng":"-74.5089"
+    },
+    {
+        "name": "New Mexico",
+        "abbreviation": "US-NM",
+        "lat":"34.8375",
+        "lng":"-106.2371"
+    },
+    {
+        "name": "New York",
+        "abbreviation": "US-NY",
+        "lat":"42.1497",
+        "lng":"-74.9384"
+    },
+    {
+        "name": "North Carolina",
+        "abbreviation": "US-NC",
+        "lat":"35.6411",
+        "lng":"-79.8431"
+    },
+    {
+        "name": "North Dakota",
+        "abbreviation": "US-ND",
+        "lat":"47.5362",
+        "lng":"-99.7930"
+    },
+    {
+        "name": "Northern Mariana Islands",
+        "abbreviation": "US-MP",
+        "lat":"14.8058",
+        "lng":"145.5505"
+    },
+    {
+        "name": "Ohio",
+        "abbreviation": "US-OH",
+        "lat":"40.3736",
+        "lng":"-82.7755"
+    },
+    {
+        "name": "Oklahoma",
+        "abbreviation": "US-OK",
+        "lat":"35.5376",
+        "lng":"-96.9247"
+    },
+    {
+        "name": "Oregon",
+        "abbreviation": "US-OR",
+        "lat":"44.5672",
+        "lng":"-122.1269"
+    },
+    {
+        "name": "Pennsylvania",
+        "abbreviation": "US-PA",
+        "lat":"40.5773",
+        "lng":"-77.2640"
+    },
+    {
+        "name": "Puerto Rico",
+        "abbreviation": "US-PR",
+        "lat":"18.2766",
+        "lng":"-66.3350"
+    },
+    {
+        "name": "Rhode Island",
+        "abbreviation": "US-RI",
+        "lat":"41.6772",
+        "lng":"-71.5101"
+    },
+    {
+        "name": "South Carolina",
+        "abbreviation": "US-SC",
+        "lat":"33.8191",
+        "lng":"-80.9066"
+    },
+    {
+        "name": "South Dakota",
+        "abbreviation": "US-SD",
+        "lat":"44.2853",
+        "lng":"-99.4632"
+    },
+    {
+        "name": "Tennessee",
+        "abbreviation": "US-TN",
+        "lat":"35.7449",
+        "lng":"-86.7489"
+    },
+    {
+        "name": "Texas",
+        "abbreviation": "US-TX",
+        "lat":"31.1060",
+        "lng":"-97.6475"
+    },
+    {
+        "name": "Utah",
+        "abbreviation": "US-UT",
+        "lat":"40.1135",
+        "lng":"-111.8535"
+    },
+    {
+        "name": "Vermont",
+        "abbreviation": "US-VT",
+        "lat":"44.0407",
+        "lng":"-72.7093"
+    },
+    {
+        "name": "Virgin Islands",
+        "abbreviation": "US-VI",
+        "lat":"18.0001",
+        "lng":"-64.8199"
+    },
+    {
+        "name": "Virginia",
+        "abbreviation": "US-VA",
+        "lat":"37.7680",
+        "lng":"-78.2057"
+    },
+    {
+        "name": "Washington",
+        "abbreviation": "US-WA",
+        "lat":"47.3917",
+        "lng":"-121.5708"
+    },
+    {
+        "name": "West Virginia",
+        "abbreviation": "US-WV",
+        "lat":"38.4680",
+        "lng":"-80.9696"
+    },
+    {
+        "name": "Wisconsin",
+        "abbreviation": "US-WI",
+        "lat":"44.2563",
+        "lng":"-89.6385"
+    },
+    {
+        "name": "Wyoming",
+        "abbreviation": "US-WY",
+        "lat":"42.7475",
+        "lng":"-107.2085"
+    }
+]
