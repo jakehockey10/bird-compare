@@ -87,10 +87,29 @@ function handleEBirdAPIResponse (map, data, endpoint) {
  * @param callback
  */
 function findRecentNearbyObservationsForMap(map, callback) {
-    var location = {
+    var lat;
+    var lng;
+    if (map.map._container.id =="map1")
+    {
+        lat = window.circle1._latlng.lat;
+        lng = window.circle1._latlng.lng;
+    }
+    else
+    {
+        lat = window.circle2._latlng.lat;
+        lng = window.circle2._latlng.lng;
+    }
+    var parameters = {
+        
+        lat: lat,
+        lng: lng,
+        sci: map.species
+    };
+
+    /*var location = {
         lat: map.center.lat,
         lng: map.center.lng
-    };
+    };*/
 
     $.get('/birds/data/obs/geo/recent', location, function (data) {
         handleEBirdAPIResponse(map, data, 'recentNearbyObservations');
@@ -105,11 +124,31 @@ function findRecentNearbyObservationsForMap(map, callback) {
  * This method was extracted (like the one above) to avoid code duplication.
  */
 function findNearestLocationsWithObservationsOfASpeciesForMap(map, callback) {
+    
+    var lat;
+    var lng;
+    if (map.map._container.id =="map1")
+    {
+        lat = window.circle1._latlng.lat;
+        lng = window.circle1._latlng.lng;
+    }
+    else
+    {
+        lat = window.circle2._latlng.lat;
+        lng = window.circle2._latlng.lng;
+    }
     var parameters = {
+        
+        lat: lat,
+        lng: lng,
+        sci: map.species
+    };
+    /*var parameters = {
+        
         lat: map.center.lat,
         lng: map.center.lng,
         sci: map.species
-    };
+    };*/
 
     $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
         handleEBirdAPIResponse(map, data, 'nearestLocationsWithObservationsOfASpecies');
@@ -203,6 +242,28 @@ function SetSpeciesForBothMaps(select) {
     var option = $('#' + select.id + ' option:selected');
     [Map1, Map2].forEach(function (map) {
         map.species = option.attr('value');
+    });
+}
+
+function changeRadius(select) {
+    var option = $('#' + select.id + ' option:selected');
+    [Map1, Map2].forEach(function (map) {
+        window.radius = option.attr('value');
+        //we need to clear circles after restiing the radius
+        if (map.map._container.id=="map1")
+        {
+            if(window.circle1!="0")                
+            {
+                map.map.removeLayer(window.circle1);
+            }
+        }
+        else
+        {
+            if(window.circle2!="0")
+            {
+                map.map.removeLayer(window.circle2);
+            }
+        }
     });
 }
 

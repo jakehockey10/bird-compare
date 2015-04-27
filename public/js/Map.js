@@ -7,6 +7,9 @@
  * @returns {{map: *, addRecentNearbyObservationsAsMarkers: Function, addMarker: Function, addCircle: Function, addPolygon: Function, addPopup: Function, addPopupWithClickListener: Function}}
  * @constructor
  */
+var circle1="0";
+var circle2="0";
+var radius=10;
 var Map = function (map) {
     /**
      * A little description of what this is:
@@ -98,6 +101,7 @@ var Map = function (map) {
          * species will hold the chosen species to pass into eBird API endpoints that require a particular species.
          */
         species: '',
+        radius: '',
         /**
          * Results from the eBird API call
          */
@@ -163,8 +167,25 @@ var Map = function (map) {
             this.map.off('click');  // clear any click handlers so that the one we add is the only one.
 
             function onMapClick(e) {
+                
+
+                if (map._container.id=="map1")
+                {
+                    if(window.circle1!="0")
+                    {
+                        map.removeLayer(window.circle1);
+                    }
+                }
+                else
+                {
+                    if(window.circle2!="0")
+                    {
+                        map.removeLayer(window.circle2);
+                    }
+                }
+
                 latLng = e.latlng;
-                radius = radius || 500;
+                radius = window.radius;
                 color = color || 'red';
                 fillColor = fillColor || '#f03';
                 fillOpacity = fillOpacity || 0.5;
@@ -173,11 +194,23 @@ var Map = function (map) {
                     fillColor: fillColor,
                     fillOpacity: fillOpacity
                 }).addTo(map);
+
+                if (map._container.id=="map1")
+                {
+                    window.circle1=circle;
+                }
+                else
+                {
+                    window.circle2=circle;
+                }
+
                 // TODO: make the binding of a popup more dynamic (i.e. opt-in/opt-out, customize message, etc.)
                 circle.bindPopup("You clicked the map at " + e.latlng.toString());
             }
-
-            this.map.on('click', onMapClick);
+            
+              
+            this.map.on('click', onMapClick);             
+                  
         },
         /**
          * Adds a polygon with vertices set by latLngs.  Also binds a popup to it, but it is a silly little popup.
