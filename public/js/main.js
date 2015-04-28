@@ -50,6 +50,7 @@ function renderAlert(alertClass, alertStrong, alertMessage) {
  * handleEBirdAPIResponse parses the response for errors and if it can't find any
  * will attempt to render markers and comparison data based on the endpoint that
  * was requested.
+ * @param map
  * @param data
  * @param endpoint
  */
@@ -206,9 +207,15 @@ function setRecentObservationsOfASpeciesInARegionClickListener() {
     })
 }
 
-function showSpotsControlsAndHideStateControls(m1, m2) {
+/**
+ * Set the controls for the spots comparison mode
+ */
+function loadSpotsView() {
+    var m1 = $('#m1');
+    var m2 = $('#m2');
     m1.hide();
     m2.show();
+
     if (getSpeciesValueFromInput()) {
         $('#recent_nearby_observations').hide();
         $('#recent_nearby_observations_of_species').show();
@@ -218,37 +225,52 @@ function showSpotsControlsAndHideStateControls(m1, m2) {
         $('#recent_nearby_observations_of_species').hide();
         $('#recent_Observations_OfASpecies_InARegion').hide();
     }
+
+    Map1.addMapClickedListener();
+    Map2.addMapClickedListener();
 }
 
 /**
- * TODO:
+ * Set the controls for the regions comparison mode
+ */
+function loadRegionsView() {
+    var m1 = $('#m1');
+    var m2 = $('#m2');
+    m1.show();
+    m2.hide();
+
+    $('#recent_nearby_observations').hide();
+    $('#recent_nearby_observations_of_species').hide();
+    $('#recent_Observations_OfASpecies_InARegion').show();
+
+    Map1.removeMapClickedListener();
+    Map2.removeMapClickedListener();
+}
+
+/**
+ * Change the comparison mode from regions to spots or spots to regions
  * @param select
  */
 function changeComparisonMode(select) {
-    var m1 = $("#m1");
-    var m2 = $("#m2");
     var option = $('#' + select.id + ' option:selected');
     if (option.attr('value') == 'R') {
-        m1.show();
-        m2.hide();
-        $('#recent_nearby_observations').hide();
-        $('#recent_nearby_observations_of_species').hide();
-        $('#recent_Observations_OfASpecies_InARegion').show();
-
-        Map1.removeMapClickedListener();
-        Map2.removeMapClickedListener();
+        loadRegionsView();
     } else {
-        showSpotsControlsAndHideStateControls(m1, m2);
-
-        Map1.addMapClickedListener();
-        Map2.addMapClickedListener();
+        loadSpotsView();
     }
 }
 
+/**
+ * Get the species chosen from the autocomplete input.
+ * @returns {*|jQuery}
+ */
 function getSpeciesValueFromInput() {
     return $('#speciesInput').next().children().data('value');
 }
 
+/**
+ * Set the species for both maps from the current autocomplete input value.
+ */
 function setSpeciesForBothMaps() {
     var species = getSpeciesValueFromInput();
     species = decodeURIComponent(species);
@@ -256,9 +278,13 @@ function setSpeciesForBothMaps() {
         map.species = species;
     });
 
-    showSpotsControlsAndHideStateControls($('#m1'), $('#m2'));
+    loadSpotsView($('#m1'), $('#m2'));
 }
 
+/**
+ * Change the radius of each map's search distance
+ * @param select
+ */
 function changeRadius(select) {
     var option = $('#' + select.id + ' option:selected');
     [Map1, Map2].forEach(function (map) {
@@ -271,6 +297,9 @@ function changeRadius(select) {
     });
 }
 
+/**
+ * Initialize the view in general.
+ */
 function initView() {
     changeComparisonMode($('#c')[0]);
     $.get('/data/taxa_eBird.json', function (data) {
