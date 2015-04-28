@@ -61,7 +61,9 @@ function handleEBirdAPIResponse (map, data, endpoint) {
     if (data.err) {
         renderAlert('danger', 'Error', JSON.stringify(data.err));
     } else if (response.errorCode) {
-        renderAlert('danger', 'Error', response.errorMsg)
+        renderAlert('danger', 'Error', response.errorMsg);
+    } else if (response[0] && response[0].errorCode) {
+        renderAlert('danger', 'Error', response[0].errorMsg);
     } else if (response.length == 0) {
         renderAlert('info', 'Heads up!', 'No results found');
     } else if (data.template) {
@@ -70,8 +72,8 @@ function handleEBirdAPIResponse (map, data, endpoint) {
         map.addResults(response);
         if (endpoint == 'recentNearbyObservations')
             map.addRecentNearbyObservationsAsMarkers(response);
-        else if (endpoint == 'nearestLocationsWithObservationsOfASpecies')
-            map.addNearestLocationsWithObservationsOfASpecies(response);
+        else if (endpoint == 'recentNearbyObservationsOfASpecies')
+            map.addRecentNearbyObservationsOfASpecies(response);
         else if (endpoint == 'recentObservationsOfASpeciesInARegion')
             map.addRecentObservationsOfASpeciesInARegion(response);
         else
@@ -103,9 +105,9 @@ function findRecentNearbyObservationsForMap(map, callback) {
         lng = window.circle2._latlng.lng;
     }
     var parameters = {
-        
         lat: lat,
         lng: lng,
+        dist: window.radius,
         sci: map.species
     };
 
@@ -126,7 +128,7 @@ function findRecentNearbyObservationsForMap(map, callback) {
  * This method finds the nearest locations with observations of a species for the map passed in.
  * This method was extracted (like the one above) to avoid code duplication.
  */
-function findNearestLocationsWithObservationsOfASpeciesForMap(map, callback) {
+function findRecentNearbyObservationsOfASpeciesForMap(map, callback) {
     
     var lat;
     var lng;
@@ -141,7 +143,6 @@ function findNearestLocationsWithObservationsOfASpeciesForMap(map, callback) {
         lng = window.circle2._latlng.lng;
     }
     var parameters = {
-        
         lat: lat,
         lng: lng,
         sci: map.species
@@ -154,7 +155,7 @@ function findNearestLocationsWithObservationsOfASpeciesForMap(map, callback) {
     };*/
 
     $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
-        handleEBirdAPIResponse(map, data, 'nearestLocationsWithObservationsOfASpecies');
+        handleEBirdAPIResponse(map, data, 'recentNearbyObservationsOfASpecies');
         if (typeof (callback) === 'function') {
             callback();
         }
@@ -167,8 +168,6 @@ function findRecentObservationsOfASpeciesInARegionForMap(map, callback) {
         r: map.region,
         sci: map.species
     };
-
-
 
     $.get('/birds/data/obs/region_spp/recent', parameters, function (data) {
         handleEBirdAPIResponse(map, data,'recentObservationsOfASpeciesInARegion');
@@ -215,12 +214,12 @@ function setRecentNearbyObservationsClickListener() {
 /**
  * Set the click listener for the "Recent Nearby Observations" button.
  */
-function setNearestLocationsWithObservationsOfASpeciesClickListener() {
-    $('#nearest_locations_of_species').on('click', function () {
+function setRecentNearbyObservationsOfASpeciesClickListener() {
+    $('#recent_nearby_observations_of_species').on('click', function () {
         loading.call(this);
         async.parallel([
-            function (callback) { findNearestLocationsWithObservationsOfASpeciesForMap(Map1, callback) },
-            function (callback) { findNearestLocationsWithObservationsOfASpeciesForMap(Map2, callback) }
+            function (callback) { findRecentNearbyObservationsOfASpeciesForMap(Map1, callback) },
+            function (callback) { findRecentNearbyObservationsOfASpeciesForMap(Map2, callback) }
         ], function () {
             renderResultsComparison();
             doneLoading();
@@ -323,7 +322,7 @@ function initView() {
  */
 $(document).ready(function() {
     setRecentNearbyObservationsClickListener();
-    setNearestLocationsWithObservationsOfASpeciesClickListener();
+    setRecentNearbyObservationsOfASpeciesClickListener();
     setRecentObservationsOfASpeciesInARegionClickListener();
 
     initView();

@@ -127,7 +127,7 @@ var Map = function (map) {
          * Render the locations that comes from the "Nearest Locations With Observations Of A Species" endpoint of the eBird API.
          * @param locations
          */
-        addNearestLocationsWithObservationsOfASpecies: function (locations) {
+        addRecentNearbyObservationsOfASpecies: function (locations) {
             $.get('/views/observationMarker.jade', function (template) {
                 constructMarkersForEBirdResults(locations, template);
             }).success(function () {
@@ -185,7 +185,7 @@ var Map = function (map) {
                 }
 
                 latLng = e.latlng;
-                radius = window.radius;
+                radius = window.radius * 1000;
                 color = color || 'red';
                 fillColor = fillColor || '#f03';
                 fillOpacity = fillOpacity || 0.5;

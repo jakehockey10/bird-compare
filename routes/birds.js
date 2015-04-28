@@ -21,7 +21,7 @@ var router = express.Router();
  */
 const eBirdDataServices = 'http://ebird.org/ws1.1/data';
 const recentNearbyObservations = '/obs/geo/recent?';
-const recentNearbyObservationsOfASpecies = '/nearest/geo_spp/recent?';
+const recentNearbyObservationsOfASpecies = '/obs/geo_spp/recent?';
 const recentObservationsOfASpeciesInARegion = '/obs/region_spp/recent?';
 const format = '&fmt=json';
 
