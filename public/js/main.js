@@ -250,14 +250,30 @@ function changeComparisonMode(select) {
     if (option.attr('value') == 'R') {
         m1.show();
         m2.hide();
+        $('#recent_nearby_observations').hide();
+        $('#recent_nearby_observations_of_species').hide();
+        $('#recent_Observations_OfASpecies_InARegion').show();
     } else {
         m1.hide();
         m2.show();
+        if (getSpeciesValueFromInput()) {
+            $('#recent_nearby_observations').hide();
+            $('#recent_nearby_observations_of_species').show();
+            $('#recent_Observations_OfASpecies_InARegion').hide();
+        } else {
+            $('#recent_nearby_observations').show();
+            $('#recent_nearby_observations_of_species').hide();
+            $('#recent_Observations_OfASpecies_InARegion').hide();
+        }
     }
 }
 
+function getSpeciesValueFromInput() {
+    return $('#speciesInput').next().children().data('value');
+}
+
 function setSpeciesForBothMaps() {
-    var species = $('#speciesInput').next().children().data('value');
+    var species = getSpeciesValueFromInput();
     species = decodeURIComponent(species);
     [Map1, Map2].forEach(function (map) {
         map.species = species;

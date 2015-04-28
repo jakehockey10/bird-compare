@@ -209,8 +209,7 @@ var Map = function (map) {
             }
             
               
-            this.map.on('click', onMapClick);             
-                  
+            this.map.on('click', onMapClick);
         },
         /**
          * Adds a polygon with vertices set by latLngs.  Also binds a popup to it, but it is a silly little popup.
