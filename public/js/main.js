@@ -35,9 +35,6 @@ function setThenGetDOMMapView(id, center, zoom) {
  */
 var Map1 = new Map(setThenGetDOMMapView('map1', [39.91, -77.02], 3));
 var Map2 = new Map(setThenGetDOMMapView('map2', [39.91, -77.02], 3));
-// TODO: Move the addCircleClickHandlers to the top of Map
-Map1.addCircle();
-Map2.addCircle();
 
 function renderAlert(alertClass, alertStrong, alertMessage) {
     var alert = {
@@ -57,6 +54,7 @@ function renderAlert(alertClass, alertStrong, alertMessage) {
  * @param endpoint
  */
 function handleEBirdAPIResponse (map, data, endpoint) {
+    $('#alert').html('');
     var response = JSON.parse(data.body);
     if (data.err) {
         renderAlert('danger', 'Error', JSON.stringify(data.err));
@@ -65,7 +63,7 @@ function handleEBirdAPIResponse (map, data, endpoint) {
     } else if (response[0] && response[0].errorCode) {
         renderAlert('danger', 'Error', response[0].errorMsg);
     } else if (response.length == 0) {
-        renderAlert('info', 'Heads up!', 'No results found');
+        renderAlert('info', 'Heads up!', 'No results found for '+ map.map.id +'.');
     } else if (data.template) {
         $('#response').html(data.template);
     } else if (data.body) {
@@ -92,29 +90,12 @@ function handleEBirdAPIResponse (map, data, endpoint) {
  * @param callback
  */
 function findRecentNearbyObservationsForMap(map, callback) {
-    var lat;
-    var lng;
-    if (map.map._container.id =="map1")
-    {
-        lat = window.circle1._latlng.lat;
-        lng = window.circle1._latlng.lng;
-    }
-    else
-    {
-        lat = window.circle2._latlng.lat;
-        lng = window.circle2._latlng.lng;
-    }
     var parameters = {
-        lat: lat,
-        lng: lng,
-        dist: window.radius,
+        lat: map.circle._latlng.lat,
+        lng: map.circle._latlng.lng,
+        dist: map.radius,
         sci: map.species
     };
-
-    /*var location = {
-        lat: map.center.lat,
-        lng: map.center.lng
-    };*/
 
     $.get('/birds/data/obs/geo/recent', parameters, function (data) {
         handleEBirdAPIResponse(map, data, 'recentNearbyObservations');
@@ -129,30 +110,12 @@ function findRecentNearbyObservationsForMap(map, callback) {
  * This method was extracted (like the one above) to avoid code duplication.
  */
 function findRecentNearbyObservationsOfASpeciesForMap(map, callback) {
-    
-    var lat;
-    var lng;
-    if (map.map._container.id =="map1")
-    {
-        lat = window.circle1._latlng.lat;
-        lng = window.circle1._latlng.lng;
-    }
-    else
-    {
-        lat = window.circle2._latlng.lat;
-        lng = window.circle2._latlng.lng;
-    }
     var parameters = {
-        lat: lat,
-        lng: lng,
+        lat: map.circle._latlng.lat,
+        lng: map.circle._latlng.lng,
+        dist: map.radius,
         sci: map.species
     };
-    /*var parameters = {
-        
-        lat: map.center.lat,
-        lng: map.center.lng,
-        sci: map.species
-    };*/
 
     $.get('/birds/data/nearest/geo_spp/recent', parameters, function (data) {
         handleEBirdAPIResponse(map, data, 'recentNearbyObservationsOfASpecies');
@@ -208,7 +171,7 @@ function setRecentNearbyObservationsClickListener() {
             renderResultsComparison();
             doneLoading();
         });
-    })
+    });
 }
 
 /**
@@ -243,6 +206,24 @@ function setRecentObservationsOfASpeciesInARegionClickListener() {
     })
 }
 
+function showSpotsControlsAndHideStateControls(m1, m2) {
+    m1.hide();
+    m2.show();
+    if (getSpeciesValueFromInput()) {
+        $('#recent_nearby_observations').hide();
+        $('#recent_nearby_observations_of_species').show();
+        $('#recent_Observations_OfASpecies_InARegion').hide();
+    } else {
+        $('#recent_nearby_observations').show();
+        $('#recent_nearby_observations_of_species').hide();
+        $('#recent_Observations_OfASpecies_InARegion').hide();
+    }
+}
+
+/**
+ * TODO:
+ * @param select
+ */
 function changeComparisonMode(select) {
     var m1 = $("#m1");
     var m2 = $("#m2");
@@ -253,18 +234,14 @@ function changeComparisonMode(select) {
         $('#recent_nearby_observations').hide();
         $('#recent_nearby_observations_of_species').hide();
         $('#recent_Observations_OfASpecies_InARegion').show();
+
+        Map1.removeMapClickedListener();
+        Map2.removeMapClickedListener();
     } else {
-        m1.hide();
-        m2.show();
-        if (getSpeciesValueFromInput()) {
-            $('#recent_nearby_observations').hide();
-            $('#recent_nearby_observations_of_species').show();
-            $('#recent_Observations_OfASpecies_InARegion').hide();
-        } else {
-            $('#recent_nearby_observations').show();
-            $('#recent_nearby_observations_of_species').hide();
-            $('#recent_Observations_OfASpecies_InARegion').hide();
-        }
+        showSpotsControlsAndHideStateControls(m1, m2);
+
+        Map1.addMapClickedListener();
+        Map2.addMapClickedListener();
     }
 }
 
@@ -277,27 +254,19 @@ function setSpeciesForBothMaps() {
     species = decodeURIComponent(species);
     [Map1, Map2].forEach(function (map) {
         map.species = species;
-    })
+    });
+
+    showSpotsControlsAndHideStateControls($('#m1'), $('#m2'));
 }
 
 function changeRadius(select) {
     var option = $('#' + select.id + ' option:selected');
     [Map1, Map2].forEach(function (map) {
-        window.radius = option.attr('value');
+        map.radius = option.attr('value');
         //we need to clear circles after restiing the radius
-        if (map.map._container.id=="map1")
+        if(!isEmpty(map.circle))
         {
-            if(window.circle1!="0")                
-            {
-                map.map.removeLayer(window.circle1);
-            }
-        }
-        else
-        {
-            if(window.circle2!="0")
-            {
-                map.map.removeLayer(window.circle2);
-            }
+            map.map.removeLayer(map.circle1);
         }
     });
 }
@@ -340,6 +309,9 @@ $(document).ready(function() {
     setRecentNearbyObservationsClickListener();
     setRecentNearbyObservationsOfASpeciesClickListener();
     setRecentObservationsOfASpeciesInARegionClickListener();
+
+    Map1.initializeMap();
+    Map2.initializeMap();
 
     initView();
 });

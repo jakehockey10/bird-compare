@@ -1,15 +1,37 @@
 /**
  * Created by jake on 4/25/15.
  */
+
+// Speed up calls to hasOwnProperty
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+function isEmpty(obj) {
+
+    // null and undefined are "empty"
+    if (obj == null) return true;
+
+    // Assume if it has a length property with a non-zero value
+    // that that property is correct.
+    if (obj.length > 0)    return false;
+    if (obj.length === 0)  return true;
+
+    // Otherwise, does it have any properties of its own?
+    // Note that this doesn't handle
+    // toString and valueOf enumeration bugs in IE < 9
+    for (var key in obj) {
+        if (hasOwnProperty.call(obj, key)) return false;
+    }
+
+    return true;
+}
+
 /**
  * Map class to accept results from eBird API calls and display on the DOM element maps
  * @param map
  * @returns {{map: *, addRecentNearbyObservationsAsMarkers: Function, addMarker: Function, addCircle: Function, addPolygon: Function, addPopup: Function, addPopupWithClickListener: Function}}
  * @constructor
  */
-var circle1="0";
-var circle2="0";
-var radius=10;
+
 var Map = function (map) {
     /**
      * A little description of what this is:
@@ -101,16 +123,50 @@ var Map = function (map) {
          * species will hold the chosen species to pass into eBird API endpoints that require a particular species.
          */
         species: '',
-        radius: '',
+        radius: 10,
         /**
          * Results from the eBird API call
          */
         results: [],
         /**
+         * Initialize the map
+         */
+        initializeMap: function () {
+            this.addMapClickedListener();
+            this.addClearButton();
+        },
+        /**
+         * Add the clear button to the map
+         */
+        addClearButton: function () {
+            var instance = this;
+            L.easyButton(
+                this.map,
+                'fa-times',
+                function () { instance.removeResults(); },
+                'clear results')
+        },
+        /**
          * addResults adds the eBird API call response to the results property
          */
         addResults: function (results) {
             this.results = results;
+        },
+        /**
+         * remove all results
+         */
+        removeResults: function () {
+            removeAllMarkers();
+            this.removeCircle();
+        },
+        /**
+         * Remove circle
+         */
+        removeCircle: function () {
+            if (this.circle) {
+                this.map.removeLayer(this.circle);
+                this.circle = {}
+            }
         },
         /**
          * Render the observations that comes from the "Recent Nearby Observations" endpoint of the eBird API.
@@ -155,37 +211,28 @@ var Map = function (map) {
             // TODO: Add to this object's markers collection?
         },
         /**
-         * Adds a circle at the location of latLng.  Also binds a popup to it, but it is a silly little popup.
-         * This method should change before being heavily used.
+         * Remove the click listener on the map
+         */
+        removeMapClickedListener: function () {
+            this.map.off('click');  // clear any click handlers so that the one we add is the only one.
+        },
+        /**
+         * Adds a click listener to the map that adds a circle of varying size to the map.
          * @param latLng
          * @param radius
          * @param color
          * @param fillColor
          * @param fillOpacity
          */
-        addCircle: function (latLng, radius, color, fillColor, fillOpacity) {
-            this.map.off('click');  // clear any click handlers so that the one we add is the only one.
-
+        addMapClickedListener: function (color, fillColor, fillOpacity) {
+            this.removeMapClickedListener();
+            var instance = this;
             function onMapClick(e) {
-                
-
-                if (map._container.id=="map1")
-                {
-                    if(window.circle1!="0")
-                    {
-                        map.removeLayer(window.circle1);
-                    }
+                if (!isEmpty(instance.circle)) {
+                    map.removeLayer(instance.circle);
                 }
-                else
-                {
-                    if(window.circle2!="0")
-                    {
-                        map.removeLayer(window.circle2);
-                    }
-                }
-
-                latLng = e.latlng;
-                radius = window.radius * 1000;
+                var latLng = e.latlng;
+                var radius = instance.radius * 1000;
                 color = color || 'red';
                 fillColor = fillColor || '#f03';
                 fillOpacity = fillOpacity || 0.5;
@@ -195,19 +242,8 @@ var Map = function (map) {
                     fillOpacity: fillOpacity
                 }).addTo(map);
 
-                if (map._container.id=="map1")
-                {
-                    window.circle1=circle;
-                }
-                else
-                {
-                    window.circle2=circle;
-                }
-
-                // TODO: make the binding of a popup more dynamic (i.e. opt-in/opt-out, customize message, etc.)
-                circle.bindPopup("You clicked the map at " + e.latlng.toString());
+                instance.circle = circle;
             }
-            
               
             this.map.on('click', onMapClick);
         },
@@ -262,3 +298,4 @@ var Map = function (map) {
         }
     };
 };
+
