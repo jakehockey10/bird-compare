@@ -278,7 +278,7 @@ function setSpeciesForBothMaps() {
         map.species = species;
     });
 
-    loadSpotsView($('#m1'), $('#m2'));
+    changeComparisonMode($('#c')[0]);
 }
 
 /**
