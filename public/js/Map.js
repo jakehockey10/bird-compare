@@ -177,6 +177,7 @@ var Map = function (map) {
                 constructMarkersForEBirdResults(observations, template);
             }).success(function () {
                 fitBoundsOfMapToMarkerGroupBounds();
+                map.spin(false);
             });
         },
         /**
@@ -188,6 +189,7 @@ var Map = function (map) {
                 constructMarkersForEBirdResults(locations, template);
             }).success(function () {
                 fitBoundsOfMapToMarkerGroupBounds();
+                map.spin(false);
             })
         },
 
@@ -196,6 +198,7 @@ var Map = function (map) {
                 constructMarkersForEBirdResults(locations, template);
             }).success(function () {
                 fitBoundsOfMapToMarkerGroupBounds();
+                map.spin(false)
             })
         },
         /**

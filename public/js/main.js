@@ -91,6 +91,8 @@ function handleEBirdAPIResponse (map, data, endpoint) {
  * @param callback
  */
 function findRecentNearbyObservationsForMap(map, callback) {
+    map.map.spin(true);
+
     var parameters = {
         lat: map.circle._latlng.lat,
         lng: map.circle._latlng.lng,
@@ -111,6 +113,8 @@ function findRecentNearbyObservationsForMap(map, callback) {
  * This method was extracted (like the one above) to avoid code duplication.
  */
 function findRecentNearbyObservationsOfASpeciesForMap(map, callback) {
+    map.map.spin(true);
+
     var parameters = {
         lat: map.circle._latlng.lat,
         lng: map.circle._latlng.lng,
@@ -127,6 +131,8 @@ function findRecentNearbyObservationsOfASpeciesForMap(map, callback) {
 }
 
 function findRecentObservationsOfASpeciesInARegionForMap(map, callback) {
+    map.map.spin(true);
+
     var parameters = {
         rtype: 'subnational1',
         r: map.region,
